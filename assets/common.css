@@ -1,3 +1,8 @@
+root{
+  --teal:#6e3b98;
+  --teal_hover: #5d0f9d;
+}
+
 *{
     font-family: 'poppins', sans-serif;
   }
@@ -20,7 +25,17 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 
-
+.customer-bg{
+  background-color: var(--teal);
+  border: 1px solid var(--teal);
+}
 .customer-bg:hover{
-  background-color: #43abb3 !important;
+  background-color:var(--teal_hover);
+  border-color: var(--teal_hover);
+}
+
+.h-line{
+  width: 150px;
+  margin: 0 auto;
+  height: 1.7px;
 }
