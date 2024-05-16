@@ -12,6 +12,13 @@
         .box{
             border-top-color: var(--teal) !important;
         }
+        .swiper-container {
+            height: 300px; /* Adjust the height as needed */
+        }
+        .swiper-slide img {
+            height: 100%;
+            width: auto;
+        }
     </style>
 
 </head>
@@ -74,9 +81,67 @@
         </div>
     </div>
 
-    <h3 >MANGEMENT TEAM</h3>
+    <h3 class = "my-5 fw-bold h-font text-center">MANGEMENT TEAM</h3>
+
+    <div class="container px-4">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper mb-5">
+                <div class="swiper-slide text-center overflow-hidden rounded">
+                    <img src="images/about/about.png" class="w-100">
+                    <h5 class = "mt-2">Rediet Muluken</h5>
+                </div>
+                <div class="swiper-slide text-center overflow-hidden rounded">
+                    <img src="images/about/about.png" class="w-100">
+                    <h5 class = "mt-2">Rediet Muluken</h5>
+                </div>
+                <div class="swiper-slide text-center overflow-hidden rounded">
+                    <img src="images/about/about.png" class="w-100">
+                    <h5 class = "mt-2">Rediet Muluken</h5>
+                </div>
+                <div class="swiper-slide text-center overflow-hidden rounded">
+                    <img src="images/about/about.png" class="w-100">
+                    <h5 class = "mt-2">Rediet Muluken</h5>
+                </div>
+                <div class="swiper-slide text-center overflow-hidden rounded">
+                    <img src="images/about/about.png" class="w-100">
+                    <h5 class = "mt-2">Rediet Muluken</h5>
+                </div>
+                <div class="swiper-slide text-center overflow-hidden rounded">
+                    <img src="images/about/about.png" class="w-100">
+                    <h5 class = "mt-2">Rediet Muluken</h5>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
 
     <?php require('inc/footer.php')?>
+    <script  src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper-->
+    <script>
+        var swiper = new Swiper(".mySwiper",{
+            slidesPreview: 4,
+            spaceBetween:40,
+            pagination:{
+                el:".swiper-pagination",
+            },
+            breakpoints:{
+                320:{
+                    slidesPreview:1,
+                },
+                640:{
+                    slidesPreview:1,
+                },
+                768:{
+                    slidesPreview:3,
+                },
+                1024:{
+                    slidesPreview:3,
+                },
+            }
+        });
+    </script>
 
 </body>
 
