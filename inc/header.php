@@ -23,7 +23,7 @@
                     <a class="nav-link me-2" href="#">Contact us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="#">About</a>
+                    <a class="nav-link me-2" href="about.php">About</a>
                 </li>
 
             </ul>

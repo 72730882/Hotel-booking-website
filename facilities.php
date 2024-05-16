@@ -8,6 +8,13 @@
     <title>Addis Hotel - Facilities</title>
     <link rel="stylesheet" href="assets/common.css">
     <?php require('inc/links.php')?>
+    <style>
+        .pop:hover{
+           border-top-color:var(--teal) !important;
+           transform: scale(1.03);
+           transition:all 0.3s; 
+        }
+    </style>
 
 </head>
 
@@ -24,9 +31,69 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 md-6 mb-5 px-4">
-                <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark">
+                <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex align-items-center mb-2">
-                       <img src="images/features/wifi.svg" width="40px">
+                       <img src="images/facilities/wifi.svg" width="40px">
+                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Laborum animi nemo similique, voluptatibus minima hic nam.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 md-6 mb-5 px-4">
+                <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
+                    <div class="d-flex align-items-center mb-2">
+                       <img src="images/facilities/wifi.svg" width="40px">
+                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Laborum animi nemo similique, voluptatibus minima hic nam.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 md-6 mb-5 px-4">
+                <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
+                    <div class="d-flex align-items-center mb-2">
+                       <img src="images/facilities/wifi.svg" width="40px">
+                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Laborum animi nemo similique, voluptatibus minima hic nam.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 md-6 mb-5 px-4">
+                <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
+                    <div class="d-flex align-items-center mb-2">
+                       <img src="images/facilities/wifi.svg" width="40px">
+                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Laborum animi nemo similique, voluptatibus minima hic nam.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 md-6 mb-5 px-4">
+                <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
+                    <div class="d-flex align-items-center mb-2">
+                       <img src="images/facilities/wifi.svg" width="40px">
+                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Laborum animi nemo similique, voluptatibus minima hic nam.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 md-6 mb-5 px-4">
+                <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
+                    <div class="d-flex align-items-center mb-2">
+                       <img src="images/facilities/wifi.svg" width="40px">
                         <h5 class = "m-0 ms-3">Wifi</h5> 
                     </div>
                     <p>
