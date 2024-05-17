@@ -1,3 +1,8 @@
+root{
+  --teal:#6e3b98;
+  --teal_hover: #5d0f9d;
+}
+
 *{
     font-family: 'poppins', sans-serif;
   }
@@ -20,6 +25,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 
+<<<<<<< HEAD
 .footer{
   width: 100%;
 }
@@ -47,4 +53,19 @@ input::-webkit-inner-spin-button {
   padding: 0 35px;
   
   }
+=======
+.customer-bg{
+  background-color: var(--teal);
+  border: 1px solid var(--teal);
+}
+.customer-bg:hover{
+  background-color:var(--teal_hover);
+  border-color: var(--teal_hover);
+}
+
+.h-line{
+  width: 150px;
+  margin: 0 auto;
+  height: 1.7px;
+>>>>>>> 14b14917d7213f7b3baa585d7cda4638d646b275
 }
