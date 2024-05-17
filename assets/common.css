@@ -20,7 +20,31 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 
-
+.footer{
+  width: 100%;
+}
 .customer-bg:hover{
   background-color: #43abb3 !important;
+}
+.availability-form{
+  margin-top: -50px;
+  z-index: 2;
+  position: relative;
+}
+
+.profile{
+  width: 30%
+}
+
+
+
+
+
+
+@media screen and (max-width: 575px){
+  .availability-form{
+  margin-top: 25px;
+  padding: 0 35px;
+  
+  }
 }
