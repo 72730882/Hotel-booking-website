@@ -1,37 +1,34 @@
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h4>Contact Us</h4>
-                <ul>
-                    <li><i class="fa fa-map-marker"></i> Address: [Your Address], Addis Ababa, Ethiopia</li>
-                    <li><i class="fa fa-phone"></i> Phone: [+251 11 123 4567]</li>
-                    <li><i class="fa fa-envelope"></i> Email: info@addisstay.com</li>
-                </ul>
+    <div class="container-fluid bg-white mt-5">
+                <div class="row">
+                    <div class="col-lg-4 p-4">
+                        <h3 class="h-font fw-bold fs-3 mb-2">ADDIS HOTEL</h3>
+                        <p class="text">
+                            Welcome to Addis Hotel, a premier destination for travelers seeking a blend of comfort,
+                            convenience, and exceptional service. Nestled in the vibrant heart of the city.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 p-4">
+                        <h5 class="mb-3">LINKS</h5>
+                        <a href="#"
+                            class="d-inline-block mb-2 text-dark text-alignment -flex text-decoration-none">Home</a><br>
+                        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Facilities</a><br>
+                        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Contact us</a><br>
+                        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">About us</a>
+                    </div>
+                    <div class="col-lg-4 p-4">
+                        <h5 class="mb-3">Follow Us</h5>
+                        <a href="#" class="d-inline-block mb-2 text-dark text-alignment -flex text-decoration-none"><i
+                                class="bi bi-twitter me-1"></i>Twitter</a><br>
+                        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none"><i
+                                class="bi bi-facebook me-1"></i>facebook</a><br>
+                        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none"><i
+                                class="bi bi-instagram me-1"></i>Instagram</a><br>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="#">Rooms</a></li>
-                    <li><a href="#">Amenities</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h4>Connect With Us</h4>
-                <ul class="social-icons">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <hr>
-        <div class="row bg-black">
-            <div class="col-md-12 text-center ">
-                <p>&copy; 2024 Addis Stay. All rights reserved.</p>
-            </div>
-        </div>
-    </div>
+            <footer class="text-center bg-dark text-white p-4 m-0 ">Designed and Developed by Addis Hotel</footer>
 </footer>
+
+
+ 

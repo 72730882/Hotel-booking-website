@@ -45,8 +45,8 @@
             <div class="col-lg-4 md-6 mb-5 px-4">
                 <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex align-items-center mb-2">
-                       <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                       <img src="images/features/FT.jpg" width="40px">
+                        <h5 class = "m-0 ms-3">Television</h5> 
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -57,8 +57,8 @@
             <div class="col-lg-4 md-6 mb-5 px-4">
                 <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex align-items-center mb-2">
-                       <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                       <img src="images/features/FA.jpg" width="40px">
+                        <h5 class = "m-0 ms-3">Air Conditioner</h5> 
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -69,8 +69,8 @@
             <div class="col-lg-4 md-6 mb-5 px-4">
                 <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex align-items-center mb-2">
-                       <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                       <img src="images/features/FH.jpg" width="40px">
+                        <h5 class = "m-0 ms-3">Room Heater</h5> 
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -81,8 +81,8 @@
             <div class="col-lg-4 md-6 mb-5 px-4">
                 <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex align-items-center mb-2">
-                       <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                       <img src="images/features/Ff.jpg" width="40px">
+                        <h5 class = "m-0 ms-3">Fitness Center</h5> 
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -93,8 +93,8 @@
             <div class="col-lg-4 md-6 mb-5 px-4">
                 <div class = "bg-white ronded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex align-items-center mb-2">
-                       <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class = "m-0 ms-3">Wifi</h5> 
+                       <img src="images/features/FT.jpg" width="40px">
+                        <h5 class = "m-0 ms-3">DS TV for Football</h5> 
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
