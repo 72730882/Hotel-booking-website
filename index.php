@@ -39,13 +39,13 @@
                         <a class="nav-link me-2" href="#">Rooms</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-2" href="#">Facilities</a>
+                        <a class="nav-link me-2" href="facilities.php">Facilities</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link me-2" href="#">Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-2" href="#">About</a>
+                        <a class="nav-link me-2" href="about.php">About</a>
                     </li>
 
                 </ul>
@@ -518,17 +518,7 @@
             </div>
             <footer class="text-center bg-dark text-white p-4 m-0 ">Designed and Developed by Addis Hotel</footer>
 
-            <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-                crossorigin="anonymous">
-            </script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-                crossorigin="anonymous">
-            </script>
-            <script src="assets/script.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+           
             <script>
             var swiper = new Swiper(".swiper-container", {
                 spaceBetween: 30,
@@ -575,7 +565,17 @@
                 }
             });
             </script>
+             <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous">
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+                crossorigin="anonymous">
+            </script>
+            <script src="assets/script.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 </body>
-
 </html>

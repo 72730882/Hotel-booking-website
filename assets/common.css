@@ -25,7 +25,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 
-<<<<<<< HEAD
+
 .footer{
   width: 100%;
 }
@@ -53,7 +53,7 @@ input::-webkit-inner-spin-button {
   padding: 0 35px;
   
   }
-=======
+
 .customer-bg{
   background-color: var(--teal);
   border: 1px solid var(--teal);
@@ -67,5 +67,5 @@ input::-webkit-inner-spin-button {
   width: 150px;
   margin: 0 auto;
   height: 1.7px;
->>>>>>> 14b14917d7213f7b3baa585d7cda4638d646b275
+}
 }
