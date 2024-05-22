@@ -133,7 +133,7 @@
                              <span class="badge rounded-pill bg-light text-dark  text-wrap">Room Heater</span>
                              <span class="badge rounded-pill bg-light text-dark  text-wrap">Television</span>
                          </div>
-        <div class="guests mb-3">
+        <div class="  mb-3">
                              <h6 class="mb-1 mt-3">Guests</h6>
                              <span class="badge rounded-pill bg-light text-dark  text-wrap">5 Adults</span>
                              <span class="badge rounded-pill bg-light text-dark  text-wrap">4 children</span></div>  </div>
