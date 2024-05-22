@@ -47,7 +47,6 @@ input::-webkit-inner-spin-button {
 
 
 
-@media screen and (max-width: 575px){
   .availability-form{
   margin-top: 25px;
   padding: 0 35px;
@@ -68,4 +67,6 @@ input::-webkit-inner-spin-button {
   margin: 0 auto;
   height: 1.7px;
 }
+.bg-custom {
+  background-color: #89067c; /* purple color */
 }
