@@ -116,12 +116,13 @@
 <div class="card mb-4 border-0 shadow-none">
   <div class="row g-0 p-3 align-items-center">
     <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-      <img src="images/rooms/room_img/room1.jpg" class="img-fluid rounded">
+      <img src="images/rooms/room_img/room2.jpg" class="img-fluid rounded">
     </div>
     <div class="col-md-5 px-lg-3 px-md-3 px-8">
         <h5 class="mb-1">Simple Room Name</h5>
         <div class="features mb-3">
-                             <h6 class="mb-1">Features</h6>
+                             <h6 class="mb-1">
+                              Features</h6>
                              <span class="badge rounded-pill bg-light text-dark  text-wrap">2 Rooms</span>
                              <span class="badge rounded-pill bg-light text-dark  text-wrap">1 Bathroom</span>
                              <span class="badge rounded-pill bg-light text-dark  text-wrap">1 Bed</span>
@@ -150,7 +151,7 @@
 <div class="card mb-4 border-0 shadow-none">
   <div class="row g-0 p-3 align-items-center">
     <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-      <img src="images/rooms/room_img/room1.jpg" class="img-fluid rounded">
+      <img src="images/rooms/room_img/room3.jpg" class="img-fluid rounded">
     </div>
     <div class="col-md-5 px-lg-3 px-md-3 px-8">
         <h5 class="mb-1">Simple Room Name</h5>
