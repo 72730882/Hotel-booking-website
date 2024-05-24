@@ -28,9 +28,9 @@ Introducing EasyStay, the ultimate hotel booking platform that simplifies your t
 # Contributors
 1.	Faiza Mohammed https://github.com/72730882
 2.	Rediet Muluken https://github.com/redu95
-3.	Fenet Damena  
+3.	Fenet Damena  https://github.com/Fenet-damena
 4.	Gelila Mihirke 
-5.	Tsehay Goremes
+5.	Tsehay Goremes [@tseehay](https://github.com/tseehay)
 
 # Technologies Used
 + HTML

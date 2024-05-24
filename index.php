@@ -180,9 +180,7 @@
                              </span>
                          </div>
                          <div class="d-flex justify-content-evenly mb-1">
-                             <a href="#" class="btn btn-primary">Book Now</a>
-                             <a href="#" class="btn btn-sa btn-outline-dark rounded-0 fw-bold shadow-none">More
-                                 details</a>
+                             
                          </div>
                      </div>
                  </div>
