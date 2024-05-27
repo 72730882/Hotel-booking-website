@@ -65,6 +65,34 @@ input::-webkit-inner-spin-button {
 }
 .custom-alert{
   position: fixed;
-  top: 25px;
+  top: 80px;
   right: 25px;
+  left:20px;
+}
+#dashboard-menu{
+  position: fixed;
+  height: 100%;
+}
+#adminDropdown {
+  transition: margin-top 0.3s ease;
+}
+
+#adminDropdown.navbar-collapsed {
+  margin-top: 56px; /* Adjust this value to match the height of the collapsed navbar */
+}
+#dashboard-menu {
+  position: fixed;
+  height: 100%;
+}
+
+@media screen and (max-width: 991px) {
+  #dashboard-menu {
+      height: auto;
+      width: 100%;
+  }
+
+  #main-content {
+      margin-top: 60px;
+  }
+
 }
