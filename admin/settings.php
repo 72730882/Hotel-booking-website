@@ -274,30 +274,31 @@ require('inc/essentials.php');
                        </div>
                     </div>
                 </div> 
+                <!----------Managment team modal --------------->
                 <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <form id="general_s_form">
+                        <form id="team_s_form">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">General Settings</h5>
+                                    <h5 class="modal-title">Add Team Member</h5>
 
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label class="form-label">Site title</label>
-                                        <input type="text" name="site_title" id="site_title_inp"
+                                        <label class="form-label fw-bold">Name</label>
+                                        <input type="text" name="member_name" id="member_name_inp"
                                             class="form-control shadow-none" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">About us</label>
-                                        <textarea name="site_about" id="site_about_inp" class="form-control shadow-none"
-                                            rows="6" required></textarea>
+                                        <label class="form-label fw-bold">Picture</label>
+                                        <input type="file" name="member_picture" id="member_picture_inp"
+                                            class="form-control shadow-none" required>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button"
-                                        onclick="site_title.value = general_data.site_title, site_about.value = general_data.site_about"
+                                        onclick=""
                                         class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
                                     <button type="submit" onclick="upd_general(site_title.value, site_about.value)"
                                         class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
