@@ -17,7 +17,7 @@ function filteration($data){
         $data[$key] = strip_tags($value);
 
     }
-    return $data;
+    return $data; 
 }
 function select($sql,$values,$datatypes)
 {

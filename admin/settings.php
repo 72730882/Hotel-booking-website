@@ -90,7 +90,7 @@ require('inc/essentials.php');
                                         onclick="site_title.value = general_data.site_title, site_about.value = general_data.site_about"
                                         class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
                                     <button type="submit" onclick="upd_general(site_title.value, site_about.value)"
-                                        class="btn btn-primary text-dark bg-dark shadow-none">SUBMIT</button>
+                                        class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
                                 </div>
                             </div>
                         </form>
@@ -99,6 +99,7 @@ require('inc/essentials.php');
 
                     </div>
                 </div>
+
                 <!------------shutdown section------>
 
                 <div class="card border-0 shadow-sm mb-4">
@@ -115,7 +116,7 @@ require('inc/essentials.php');
 
                         </div>
 
-                        <p class="card-text" id="site_about">No Customer wii be allowed to book hotel room, hwen
+                        <p class="card-text" id="site_about">No Customer wii be allowed to book hotel room, when
                             shutdown mode is turned on.</p>
 
                     </div>
@@ -153,15 +154,15 @@ require('inc/essentials.php');
 
                             </div>
                             <div class="col-lg-6">
-                            <div class="mb-4">
+                                <div class="mb-4">
                                     <h6 class="card-subtitle mb-1 fw-bold">Social Links</h6>
-                                    <p class="card-text mb-1"><i class="bi bi-twitter"></i><span id="tw"></span>
+                                    <p class="card-text"><i class="bi bi-twitter"></i><span id="tw"></span>
                                     </p>
                                     <p class="card-text"><i class="bi bi-facebook"></i><span id="fb"></span></p>
                                     <p class="card-text"><i class="bi bi-instagram"></i><span id="insta"></span></p>
                                 </div>
                                 <div class="mb-4">
-                                   <iframe id="iframe" class="border p-2 w-100" loading="lazy"></iframe>
+                                    <iframe id="iframe" class="border p-2 w-100" loading="lazy"></iframe>
                                 </div>
                             </div>
 
@@ -170,12 +171,153 @@ require('inc/essentials.php');
                     </div>
                 </div>
 
+                <!-------------contacts details modal --------->
+                <div class="modal fade" id="contacts-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <form id="contacts_s_form">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Contact Settings</h5>
+
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container-fluid p-0">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label fw-bold">Address</label>
+                                                    <input type="text" name="address" id="address_inp"
+                                                        class="form-control shadow-none" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label fw-bold">Google Map link</label>
+                                                    <input type="text" name="gmap" id="gmap_inp"
+                                                        class="form-control shadow-none" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label fw-bold">Phone Numbers (with country
+                                                        code)</label>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                                                        <input type="text" name="pn1" id="pn1_inp"
+                                                            class="form-control shadow-none" required>
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                                                        <input type="text" name="pn1" id="pn1_inp"
+                                                            class="form-control shadow-none" required>
+                                                    </div>
+
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label fw-bold">Email</label>
+                                                    <input type="email" name="email" id="email_inp"
+                                                        class="form-control shadow-none" required>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                            <div class="mb-3">
+                                                    <label class="form-label fw-bold">Social Links</label>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text"><i class="bi bi-twitter"></i></span>
+                                                        <input type="text" name="tw" id="tw_inp"
+                                                            class="form-control shadow-none" required>
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text"><i class="bi bi-facebook"></i></span>
+                                                        <input type="text" name="fb" id="fb_inp"
+                                                            class="form-control shadow-none" required>
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text"><i class="bi bi-instagram"></i></span>
+                                                        <input type="text" name="insta" id="insta_inp"
+                                                            class="form-control shadow-none" required>
+                                                    </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label fw-bold">iFrame Src</label>
+                                                <input type="text" name="iframe" id="iframe_inp"
+                                                        class="form-control shadow-none" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        onclick="contacts_inp(contacts_data)"
+                                        class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                                    <button type="submit" onclick="upd_general(site_title.value, site_about.value)"
+                                        class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+                    </div>
+                </div>
+
+                  <!---------------Managment Team section----------->
+                  <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="card-title m-0">Managment Team</h5>
+                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#team-s"><i class="bi bi-plus-square"></i>Add
+                            </button>
+                        </div>
+                       <div class="row" id="team-data">
+
+                       </div>
+                    </div>
+                </div> 
+                <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <form id="general_s_form">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">General Settings</h5>
+
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Site title</label>
+                                        <input type="text" name="site_title" id="site_title_inp"
+                                            class="form-control shadow-none" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">About us</label>
+                                        <textarea name="site_about" id="site_about_inp" class="form-control shadow-none"
+                                            rows="6" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        onclick="site_title.value = general_data.site_title, site_about.value = general_data.site_about"
+                                        class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                                    <button type="submit" onclick="upd_general(site_title.value, site_about.value)"
+                                        class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+                    </div>
+                </div>
+
+
+
 
             </div>
         </div>
     </div>
 
-    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
 
 
@@ -185,6 +327,8 @@ require('inc/essentials.php');
     let general_s_form = document.getElementById('general_s_form');
     let site_title_inp = document.getElementById('site_title_inp');
     let site_about_inp = document.getElementById('site_about_inp');
+    let contacts_s_form = document.getElementById('contacts_s_form');
+
 
     function get_general() {
         let site_title = document.getElementById('site_title');
@@ -237,7 +381,7 @@ require('inc/essentials.php');
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "ajax/settings_crud.php", true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
+        xhr.responseType = 'json';
         xhr.onload = function() {
             var myModal = document.getElementById('general-s');
             var modal = bootstrap.Modal.getInstance(myModal);
@@ -285,23 +429,25 @@ require('inc/essentials.php');
 
     function get_contacts() {
 
-        let contacts_p_id = ['address','gmap','pn1','pn2','email','fb','insta','tw'];
+        let contacts_p_id = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'tw'];
         let iframe = document.getElementById('iframe');
-    
+
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "ajax/settings_crud.php", true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-       
 
+        xhr.responseType = 'json';
         xhr.onload = function() {
             contacts_data = JSON.parse(this.responseText);
             contacts_data = Object.values(contacts_data);
 
-            for(i=0;i<contacts_p_id.length;i++){
-                document.getElementById(contacts_p_id[i]).innerText = contacts_data[i+1];
+            for (i = 0; i < contacts_p_id.length; i++) {
+                document.getElementById(contacts_p_id[i]).innerText = contacts_data[i + 1];
             }
+            iframe.src = contacts_data[9];
+            contacts_inp(contacts_data);
 
-            
+
 
         }
 
@@ -309,23 +455,69 @@ require('inc/essentials.php');
 
 
     }
+     function contacts_inp(data){
+        let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp', 'tw_inp', 'iframe_inp'];
+
+        for(i=0;i<contacts_inp_id.length;i++){
+            document.getElementById(contacts_inp_id[i]).value = data[i+1];
+        }
+
+    }
+    contacts_s_form.addEventListener('submit',function(e){
+        e.preventDefault();
+        upd_contacts();
+     });
+
+
+    
+    function upd_contacts(){
+        let index = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'tw', 'iframe'];
+        let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp', 'tw_inp', 'iframe_inp'];
+        let data_str="";
+        for (i=0;i<index.length;i++){
+            data_str += index[i] + "=" + document.getElementById(contacts_inp_id[i]).value + '&';
+        }
+        data_str += "upd_contacts";
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/settings_crud.php", true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onload = function(){
+            var myModal = document.getElementById('contacts-s');
+            var modal = bootstrap.Modal.getInstance(myModal);
+            modal.hide();
+            if (this.responseText == 1) {
+                alert('success', 'Changes saved!');
+                get_contacts();
+
+            } else {
+                alert('Success', 'No changes made!');
+
+            }
+        
+        }
+
+        xhr.send(data_str);
+
+    }
+
+    
+
+
+
+
+
+
     window.onload = function() {
         get_general();
         get_contacts();
 
     }
 
-
-
-
-
-
-    window.onload = function() {
-        get_general();
-    }
     </script>
 
-<script>
+    <script>
     function alert(type, msg) {
         let bs_class = (type == 'success') ? 'alert-success' : 'alert-danger';
         let element = document.createElement('div');
