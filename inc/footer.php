@@ -10,18 +10,25 @@
             </div>
             <div class="col-lg-4 p-4">
                 <h5 class="mb-3">LINKS</h5>
-                <a href="#" class="d-inline-block mb-2 text-dark text-alignment -flex text-decoration-none">Home</a><br>
-                <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Facilities</a><br>
-                <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Contact us</a><br>
-                <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">About us</a>
+                <a href="index.php" class="d-inline-block mb-2 text-dark text-alignment -flex text-decoration-none">Home</a><br>
+                <a href="rooms.php" class="d-inline-block mb-2 text-dark text-decoration-none">Rooms</a><br>
+                <a href="facilities" class="d-inline-block mb-2 text-dark text-decoration-none">Facilities</a><br>
+                <a href="contact.php" class="d-inline-block mb-2 text-dark text-decoration-none">Contact us</a><br>
+                <a href="about.php" class="d-inline-block mb-2 text-dark text-decoration-none">About us</a>
             </div>
             <div class="col-lg-4 p-4">
                 <h5 class="mb-3">Follow Us</h5>
-                <a href="#" class="d-inline-block mb-2 text-dark text-alignment -flex text-decoration-none"><i
+                <?php 
+                    if($contact_r['tw']!=''){
+                        echo<<<data
+                        <a href="$contact_r[tw]" class="d-inline-block mb-2 text-dark text-alignment -flex text-decoration-none"><i
                         class="bi bi-twitter me-1"></i>Twitter</a><br>
-                <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none"><i
+                        data;
+                    }
+                ?>
+                <a href="<?php $contact_r['fb']!=''?>" class="d-inline-block mb-2 text-dark text-decoration-none"><i
                         class="bi bi-facebook me-1"></i>facebook</a><br>
-                <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none"><i
+                <a href="<?php $contact_r['insta']!=''?>" class="d-inline-block mb-2 text-dark text-decoration-none"><i
                         class="bi bi-instagram me-1"></i>Instagram</a><br>
             </div>
         </div>
