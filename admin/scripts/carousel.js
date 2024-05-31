@@ -34,7 +34,7 @@ function add_image(){
         else{
             alert('Success','New Image added!');
             carousel_picture_inp.value='';
-            get_carousel() // to display the image on the dashboard
+            get_carousel() // to display the image 
         }
     }
     
@@ -50,11 +50,11 @@ function add_image(){
 
 function get_carousel(){
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "ajax/settings_crud.php", true);
+    xhr.open("POST", "ajax/carousel_crud.php", true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     xhr.onload = function() {
-        document.getElementById('team-data').innerHTML = this.responseText;
+        document.getElementById('carousel-data').innerHTML = this.responseText;
         
     
     }
@@ -64,14 +64,14 @@ function get_carousel(){
     xhr.send('get_carousel');
 }
 
-function rem_member(va1){
+function rem_image(va1){
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "ajax/settings_crud.php", true);
+    xhr.open("POST", "ajax/carousel_crud.php", true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     xhr.onload = function() {
         if(this.responseText==1){
-            alert('success','Member removed!');
+            alert('success','Image removed!');
             get_carousel();
         }
         else{
@@ -80,7 +80,7 @@ function rem_member(va1){
 
     }
 
-    xhr.send('rem_members=' + val);
+    xhr.send('rem_image=' + val);
 
 }
 
