@@ -338,6 +338,12 @@
     </div>
 
     <!---------- reach us ---------------->
+    <?php
+              $contact_q="SELECT * FROM 'contact_details' WHERE 'sr_no=?";
+              $value=[1];
+              $contact_r=mysqli_fetch_assoc(select($contact_q,$values,'i'));
+              print_r($contact_r);
+             ?>
 
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
     <div class="container">
@@ -348,8 +354,45 @@
             <div class="col-lg-4 col-md-4">
                 <div class="bg-white p-4 rounded mb-4">
                     <h5>Call Us</h5>
-                    <a href="tel: +111 2222 333 3444" class="d-inline-block mb-2 text-decoration-none text-dark"><i class="bi bi-telephone-fill"></i>+111 2222 333 3444</a><br>
-                    <a href="tel: +111 2222 333 3444" class="d-inline-block mb-2 text-decoration-none text-dark"><i class="bi bi-telephone-fill"></i>+111 2222 333 3444</a>
+                    <a href="tel: +<?php echo $contact_r['pn1']?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                             <i class="bi bi-telephone-fill"></i>+<?php echo $contact_r['pn1']?>
+                            </a>
+                            <br>
+                             <?php
+                               if ($contact_r['pn2']!=''){
+                                    echo<<data
+                                        <a href="tel: +$contact_r[pn2]" class="d-inline-block text-decoration-none text-dark">
+                                            <i class="bi bi-telephone-fill"></i>+$contact_r[pn2]
+                                        </a>
+                                    data;
+                               }                                                                       
+                                   
+                             ?>
+                         </div>
+                         <div class="bg-white p-4 rounded mb-4">
+                             <h5>Follow Us</h5>
+                             <?php
+                             if($contact_r['tw']!=''){
+                                echo<<<data
+                                <a href="#" class="d-inline-block mb-3 ">
+                                <span class="badge bg-light text-dark fs-6 p-2">
+                                <i class="bi bi-twitter me-1">
+                                </i>Twitter</span>
+                                </a>
+                                <br>
+                                data;
+                             }
+                             ?>
+                             
+                             <a href="<?php $contact_r['fb']!=''?>" class="d-inline-block mb-3 ">
+                                <span class="badge bg-light text-dark fs-6 p-2">
+                                    <i class="bi bi-facebook me-1"></i>Facebook</span>
+                            </a><br>
+                             <a href="<?php $contact_r['inta']!=''?>" class="d-inline-block ">
+                                <span class="badge bg-light text-dark fs-6 p-2">
+                                    <i class="bi bi-instagram me-1">
+                                    </i>Instagram</span>
+                                </a><br>
                 </div>
                 <div class="bg-white p-4 rounded mb-4">
                     <h5>Follow Us</h5>
