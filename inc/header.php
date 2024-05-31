@@ -4,7 +4,7 @@ require('admin/inc/essentials.php');
 
 $contact_q = "SELECT * FROM 'contact_details' WHERE 'sr_no=?";
 $value = [1];
-$contact_r = mysqli_fetch_assoc(select($contact_q, $values, 'i'));
+$contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
 ?>
 
 <nav id="nav_bar" class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
