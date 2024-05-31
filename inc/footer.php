@@ -34,4 +34,20 @@
         </div>
     </div>
     <footer class="text-center bg-dark text-white p-4 m-0 ">Designed and Developed by Addis Hotel</footer>
+    <script>
+        function setACtive(){
+           let  navbar = document.getElemenById('nav_bar');
+           let a_tags = navbar.getElementsByTagName('a');
+           
+           for(i=0; i < a_tags.length; i++){
+            let file = a_tags[i].herf.split('/').pop();
+            let file_name = file.split('.')[0];
+
+            if (document.location.href.indexOf(file_name)>= 0){
+                a_tags[i].classList.add('active');
+            }
+           }
+        }
+        setActive();
+    </script>
 </footer>
