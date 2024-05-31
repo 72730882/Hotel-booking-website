@@ -267,7 +267,7 @@ require('inc/essentials.php');
                                                     </div>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                        <input type="text" name="pn1" id="pn1_inp"
+                                                        <input type="number" name="pn1" id="pn1_inp"
                                                             class="form-control shadow-none" required>
                                                     </div>
 
