@@ -259,11 +259,10 @@ require('inc/essentials.php');
                                                         class="form-control shadow-none" required>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label fw-bold">Phone Numbers (with country
-                                                        code)</label>
+                                                    <label class="form-label fw-bold">Phone Numbers (with country code)</label>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                        <input type="text" name="pn1" id="pn1_inp"
+                                                        <input type="number" name="pn1" id="pn1_inp"
                                                             class="form-control shadow-none" required>
                                                     </div>
                                                     <div class="input-group mb-3">
