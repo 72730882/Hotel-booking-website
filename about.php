@@ -8,6 +8,8 @@
     <title>Addis Hotel - ABOUT</title>
     <link rel="stylesheet" href="assets/common.css">
     <?php require('inc/links.php')?>
+    <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css " rel="stylesheet">
+
     <style>
         .box{
             border-top-color: var(--teal) !important;
@@ -142,6 +144,8 @@
             }
         });
     </script>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js "></script>
+
 
 </body>
 

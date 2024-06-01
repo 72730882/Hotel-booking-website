@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Addis Hotel - contact</title>
     <link rel="stylesheet" href="assets/common.css">
+    <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css " rel="stylesheet">
+
     <?php require('inc/links.php'); ?>
 
 
@@ -192,6 +194,8 @@
 
 
     <?php require('inc/footer.php') ?>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js "></script>
+
 
 </body>
 
