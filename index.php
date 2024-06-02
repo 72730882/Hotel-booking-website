@@ -347,6 +347,11 @@
         </div>
 
         <!---------- reach us ---------------->
+        <?php
+        $contact_q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
+        $values = [1];
+        $contact_r = mysqli_fetch_assoc(select($contact_q, $values, 'i'));
+        ?>
 
         <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
         <div class="container">
@@ -391,7 +396,7 @@
                             <span class="badge bg-light text-dark fs-6 p-2">
                                 <i class="bi bi-facebook me-1"></i>Facebook</span>
                         </a><br>
-                        <a href="<?php $contact_r['inta'] != '' ?>" class="d-inline-block ">
+                        <a href="<?php $contact_r['insta'] != '' ?>" class="d-inline-block ">
                             <span class="badge bg-light text-dark fs-6 p-2">
                                 <i class="bi bi-instagram me-1">
                                 </i>Instagram</span>

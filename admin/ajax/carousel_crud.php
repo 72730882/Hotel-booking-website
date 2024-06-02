@@ -1,7 +1,7 @@
 <?php
 require('../inc/db_config.php');
 require('../inc/essentials.php');
-adminLogin();
+//adminLogin();
 
 if (isset($_POST['add_image'])) {
     $img_r = uploadImage($_FILES['picture'], CAROUSEL_FOLDER);
