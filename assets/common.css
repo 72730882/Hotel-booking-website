@@ -70,3 +70,9 @@ input::-webkit-inner-spin-button {
 .bg-custom {
   background-color: #89067c; /* purple color */
 }
+.custom-alert{
+  position: fixed;
+  top: 80px;
+  right: 25px;
+  left:20px;
+}
