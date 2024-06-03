@@ -83,10 +83,11 @@ if (isset($_GET['del'])) {
     </div>
 
     <?php require('inc/header.php')  ?>
+    
     <div class="container-fluid" id="main-content">
         <div class="row">
             <div class="col-lg-10 ms-auto p-4">
-                <h3 class="mb-4">User Queries</h3>
+                <h3 class="mb-4">Features & Facilites</h3>
 
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">
