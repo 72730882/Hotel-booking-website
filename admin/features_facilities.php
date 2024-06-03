@@ -356,9 +356,7 @@ if (isset($_GET['del'])) {
                     alert('success','Facility removed!');
                     get_facilities();
                 }
-                elseif(this.responseText == "room added"){
-                    alert('error','Facility is added in room');
-                }
+                
                 else{
                     alert('error','Server down!');
                 }

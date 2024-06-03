@@ -10,14 +10,9 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>`;
         document.body.append(element);
-        setTimeout(remAlert,2000);
     }
 
-    remAlert(){
-        document.getElemetsByClassName('alert')[0].remove
-    }
-
-    function setActive() {
+    function setACtive() {
         let navbar = document.getElemenById('nav_bar');
         let a_tags = navbar.getElementsByTagName('a');
 
