@@ -99,7 +99,7 @@ if (isset($_GET['del'])) {
 
                         <div class=" table-responsive-md" style="height: 350px; overflow-y: scroll;">
                             <table class="table table-hover border">
-                                <thead class="stikcy-top">
+                                <thead>
                                     <tr class="bg-dark text-light">
                                         <th scope=" col">#</th>
                                         <th scope="col">Name</th>
@@ -128,12 +128,12 @@ if (isset($_GET['del'])) {
 
                         <div class=" table-responsive-md" style="height: 350px; overflow-y: scroll;">
                             <table class="table table-hover border">
-                                <thead class="stikcy-top">
+                                <thead>
                                     <tr class="bg-dark text-light">
                                         <th scope=" col">#</th>
                                          <th scope="col">Icon</th>
                                         <th scope="col">Name</th>
-                                         <th scope="col">Description</th>
+                                         <th scope="col" width = "40%">Description</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -151,186 +151,229 @@ if (isset($_GET['del'])) {
 
             </div>
         </div>
+    </div>
+    
 
-        <!----------Feature modal --------------->
-        <div class="modal fade" id="feature-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <form id="feature_s_form">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Add Feature</h5>
+    <!----------Feature modal --------------->
+    <div class="modal fade" id="feature-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="feature_s_form">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Feature</h5>
 
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Name</label>
+                            <input type="text" name="feature_name" id="feature_name_inp" class="form-control shadow-none" required>
                         </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Name</label>
-                                <input type="text" name="feature_name" id="feature_name_inp" class="form-control shadow-none" required>
-                            </div>
-                            
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                        <button type="submit" class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!----------Facility modal --------------->
+    <div class="modal fade" id="facility-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="facility_s_form">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Facility</h5>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Name</label>
+                            <input type="text" name="facility_name" class="form-control shadow-none" required>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                            <button type="submit" class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Icon</label>
+                            <input type="file" name="facility_icon" accept=".svg" class="form-control shadow-none" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea name = "facility_description" class="form-control shadow-none" rows="3"></textarea>
                         </div>
                     </div>
-                </form>
-            </div>
-        </div>
-
-
-        <!----------Facility modal --------------->
-        <div class="modal fade" id="facility-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <form id="facility_s_form">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Add Facility</h5>
-
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Name</label>
-                                <input type="text" name="facility_name" class="form-control shadow-none" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Icon</label>
-                                <input type="file" name="facility_icon" accept=".svg" class="form-control shadow-none" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Description</label>
-                                <textarea name = "facility_description" class="form-control shadow-none" rows="3"></textarea>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="reset" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                            <button type="submit" class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                        <button type="submit" class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
+    </div>
 
 
-        <?php require('inc/scripts.php') ?>
-
-        <script> 
-            let feature_s_form = document.getElementById('feature_s_form');
-            let facility_s_form = document.getElementById('facility_s_form');
+    <?php require('inc/scripts.php') ?>
 
 
-            feature_s_form.addEventListener('submit',function(e){
-                e.preventDefault();
-                add_feature();
-            })
+    <script> 
+        let feature_s_form = document.getElementById('feature_s_form');
+        let facility_s_form = document.getElementById('facility_s_form');
 
-            function add_feature(){
-                let data = new FormData();
-                data.append('name',feature_s_form.elements['feature_name'].value);                
-                data.append('add_feature','');
 
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", "ajax/features_facilities.php", true);
+        feature_s_form.addEventListener('submit',function(e){
+            e.preventDefault();
+            add_feature();
+        })
+
+        function add_feature(){
+            let data = new FormData();
+            data.append('name',feature_s_form.elements['feature_name'].value);                
+            data.append('add_feature','');
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features_facilities.php", true);
+        
+
+            xhr.onload = function() { 
+                var myModal = document.getElementById('feature-s');
+                var modal = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
+
+                if(this.responseText == '1'){
+                    alert('success','New Feature added!');
+                    feature_s_form.elements['feature_name'].value = '';
+                    get_features();
+                }
+                else{
+                    alert('error', 'Server Down!');
+                }
+            }
+            
+            xhr.send(data);
+        }
+
+        function rem_feature(val){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features_facilities.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                if(this.responseText==1){
+                    alert('success','Feature removed!');
+                    get_features();
+                }
+                else{
+                    alert('error','Server down!');
+                }
+
+            }
+
+            xhr.send('rem_feature=' + val);
+
+        }
+
+        function get_features(){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features_facilities.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                document.getElementById('features-data').innerHTML = this.responseText;
+                
+            
+            }
+
             
 
-                xhr.onload = function() { 
-                    var myModal = document.getElementById('feature-s');
-                    var modal = bootstrap.Modal.getInstance(myModal);
-                    modal.hide();
+            xhr.send('get_features');
+        }
 
-                    if(this.responseText == '1'){
-                        alert('success','New Feature added!');
-                        feature_s_form.elements['feature_name'].value = '';
-                        get_features();
-                    }
-                    else{
-                       alert('error', 'Server Down!');
-                    }
+        facility_s_form.addEventListener('submit',function(e){
+            e.preventDefault();
+            add_facility();
+        })
+
+        function add_facility(){
+            let data = new FormData();
+            data.append('name',facility_s_form.elements['facility_name'].value);  
+            data.append('icon',facility_s_form.elements['facility_icon'].files[0]); 
+            data.append('description',facility_s_form.elements['facility_description'].value);              
+            data.append('add_facility','');
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features_facilities.php", true);
+        
+
+            xhr.onload = function() { 
+                var myModal = document.getElementById('facility-s');
+                var modal = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
+
+                if(this.responseText == 'inv_img'){
+                    alert('error', 'Only SVG images are allowed');
                 }
+                else if(this.responseText == 'inv_size'){
+                    alert('error', 'Images should be less that 1MB!');
+                }
+                else if(this.responseText == 'upd_failed'){
+                    alert('error', 'Image upload faile. Server Down!');
+
+                }
+                else{
+                    alert('success','New member added!');
+                    facility_s_form.reset();    
+                    get_facilities(); 
+                }
+            }
+            
+            xhr.send(data);
+        }
+
+        function get_facilities(){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features_facilities.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                document.getElementById('facilities-data').innerHTML = this.responseText;
                 
-                xhr.send(data);
+            
             }
 
-            function rem_feature(val){
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", "ajax/features_facilities.php", true);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-                xhr.onload = function() {
-                    if(this.responseText==1){
-                        alert('success','Feature removed!');
-                        get_f();
-                    }
-                    else{
-                        alert('error','Server down!');
-                    }
-
-                }
-
-                xhr.send('rem_feature=' + val);
-
-            }
-
-            function get_features(){
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", "ajax/features_facilities.php", true);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-                xhr.onload = function() {
-                    document.getElementById('features-data').innerHTML = this.responseText;
-                    
-                
-                }
-
-                
-
-                xhr.send('get_features');
-            }
-
-            facility_s_form.addEventListener('submit',function(e){
-                e.preventDefault();
-                add_facility();
-            })
-
-             function add_facility(){
-                let data = new FormData();
-                data.append('name',facility_s_form.elements['facility_name'].value);  
-                data.append('icon',facility_s_form.elements['facility_icon'].files[0]); 
-                data.append('description',facility_s_form.elements['facility_description'].value);              
-                data.append('add_facility','');
-
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", "ajax/features_facilities.php", true);
             
 
-                xhr.onload = function() { 
-                    var myModal = document.getElementById('facility-s');
-                    var modal = bootstrap.Modal.getInstance(myModal);
-                    modal.hide();
+            xhr.send('get_facilities');
+        }
 
-                    if(this.responseText == 'inv_img'){
-                        alert('error', 'Only SVG images are allowed');
-                    }
-                    else if(this.responseText == 'inv_size'){
-                        alert('error', 'Images should be less that 1MB!');
-                    }
-                    else if(this.responseText == 'upd_failed'){
-                        alert('error', 'Image upload faile. Server Down!');
+        function rem_facility(val){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features_facilities.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-                    }
-                    else{
-                        alert('success','New member added!');
-                        facility_s_form.reset();    
-                        //get_members() 
-                    }
+            xhr.onload = function() {
+                if(this.responseText==1){
+                    alert('success','Facility removed!');
+                    get_facilities();
                 }
-                
-                xhr.send(data);
+                elseif(this.responseText == "room added"){
+                    alert('error','Facility is added in room');
+                }
+                else{
+                    alert('error','Server down!');
+                }
+
             }
 
-            window.onload = function(){
-                get_features();
-            }
-        </script>
+            xhr.send('rem_facility=' + val);
+
+        }
+
+        window.onload = function(){
+            get_features();
+            get_facilities();
+        }
+    </script>
 
 </body>
 
