@@ -106,7 +106,7 @@ if (isset($_GET['del'])) {
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody id =""features-data>
+                                <tbody id ="features-data">
                                     
                                 </tbody>
                             </table>
