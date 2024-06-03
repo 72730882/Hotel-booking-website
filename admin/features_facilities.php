@@ -97,45 +97,17 @@ if (isset($_GET['del'])) {
                             </button>
                         </div>
 
-                        <div class=" table-responsive-md" style="height: 450px; overflow-y: scroll;">
+                        <div class=" table-responsive-md" style="height: 350px; overflow-y: scroll;">
                             <table class="table table-hover border">
                                 <thead class="stikcy-top">
                                     <tr class="bg-dark text-light">
                                         <th scope=" col">#</th>
-                                        <th scope="col">name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col" width="20%">Subject</th>
-                                        <th scope="col" width="30%">Message</th>
-                                        <th scope="col">Date</th>
+                                        <th scope="col">Name</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <?php
-                                    $q = "SELECT *FROM `user_queries` ORDER BY `sr_no` DESC";
-                                    $data = mysqli_query($con, $q);
-                                    $i = 1;
-                                    while ($row = mysqli_fetch_assoc($data)) {
-                                        $seen = '';
-                                        if ($row['seen'] != 1) {
-                                            $seen = "<a href='?seen=$row[sr_no]' class ='btn btn-sm rounded-pill btn-primary'> Mark as read</a>";
-                                        }
-                                        $seen .= "<a href='?seen=$row[sr_no]' class ='btn btn-sm rounded-pill btn-danger mt-2'> Delete</a>";
-                                        echo <<<query
-                                        <tr>
-                                        <td>$i</td>
-                                        <td>$row[name]</td>
-                                        <td>$row[email]</td>
-                                        <td>$row[subject]</td>
-                                        <td>$row[message]</td>
-                                        <td>$row[date]</td>
-                                        <td>$seen</td>
-                                       
-                                        </tr>
-                                        query;
-                                        $i++;
-                                    }
-                                    ?>
+                                <tbody id =""features-data>
+                                    
                                 </tbody>
                             </table>
 
@@ -143,32 +115,6 @@ if (isset($_GET['del'])) {
 
 
                     </div>
-
-                    <!---------Carousel modal --------------->
-                    <div class="modal fade" id="carousel-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <form id="carousel_s_form">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Add Image</h5>
-
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="mb-3">
-                                            <label class="form-label fw-bold">Picture</label>
-                                            <input type="file" name="carousel_picture" id="carousel_picture_inp" accept=".jbg, .png, .webp, .jpeg" class="form-control shadow-none" required>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" onclick="member_name.value='', carousel_picture.value=''" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                        <button type="submit" onclick="upd_general(site_title.value, site_about.value)" class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-
 
                 </div>
             </div>
@@ -192,7 +138,7 @@ if (isset($_GET['del'])) {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                            <button type="submit" onclick="upd_general(site_title.value, site_about.value)" class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
+                            <button type="submit" class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
                         </div>
                     </div>
                 </form>
@@ -203,7 +149,7 @@ if (isset($_GET['del'])) {
 
         <?php require('inc/scripts.php') ?>
 
-        <script>
+        <script> 
             let feature_s_form = document.getElementById('feature_s_form');
             feature_s_form.addEventListener('submit',function(e){
                 e.preventDefault();
@@ -216,10 +162,10 @@ if (isset($_GET['del'])) {
                 data.append('add_feature','');
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "ajax/features_facilities_crud.php", true);
+                xhr.open("POST", "ajax/features_facilities.php", true);
             
 
-                xhr.onload = function() {
+                xhr.onload = function() { 
                     var myModal = document.getElementById('feature-s');
                     var modal = bootstrap.Modal.getInstance(myModal);
                     modal.hide();
@@ -227,7 +173,7 @@ if (isset($_GET['del'])) {
                     if(this.responseText == '1'){
                         alert('Success','New Feature added!');
                         feature_s_form.elements['feature_name'].value = '';
-                        get_members() // to display the image on the dashboar
+                        get_features();
                     }
                     else{
                        alert('error', 'Server Down!');
@@ -236,12 +182,28 @@ if (isset($_GET['del'])) {
                 
                 xhr.send(data);
             }
+
+            function get_features(){
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "ajax/features_facilities.php", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                xhr.onload = function() {
+                    document.getElementById('features-data').innerHTML = this.responseText;
+                    
+                
+                }
+
+                
+
+                xhr.send('get_features');
+            }
+
+            window.onload = function(){
+                get_features();
+            }
         </script>
 
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-        <script src="scripts/carousel.js"></script>
 </body>
 
 </html>
