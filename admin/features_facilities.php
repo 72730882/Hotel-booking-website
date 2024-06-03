@@ -86,9 +86,9 @@ if (isset($_GET['del'])) {
     
     <div class="container-fluid" id="main-content">
         <div class="row">
-            <div class="col-lg-10 ms-auto p-4 overflow-hidden">
+            <div class="col-lg-10 ms-auto p-4">
                 <h3 class="mb-4">Features & Facilites</h3>
-
+                <!--Features...-->
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between mb-3">
@@ -115,14 +115,14 @@ if (isset($_GET['del'])) {
 
 
                     </div>
-
                 </div>
 
+                <!--Facilities...-->
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <h5 class="card-title m-0">Facilities</h5>
-                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#facilities-s"><i class="bi bi-plus-square"></i> Add
+                            <h5 class="card-title m-0">Facilites</h5>
+                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#facility-s"><i class="bi bi-plus-square"></i> Add
                             </button>
                         </div>
 
@@ -131,13 +131,13 @@ if (isset($_GET['del'])) {
                                 <thead class="stikcy-top">
                                     <tr class="bg-dark text-light">
                                         <th scope=" col">#</th>
+                                         <th scope="col">Icon</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Icon</th>
-                                        <th scope="col">Description</th>
+                                         <th scope="col">Description</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody id ="facilities-data">
+                                <tbody id ="facility-data">
                                     
                                 </tbody>
                             </table>
@@ -146,13 +146,11 @@ if (isset($_GET['del'])) {
 
 
                     </div>
-
                 </div>
 
 
             </div>
         </div>
-    </dev>
 
         <!----------Feature modal --------------->
         <div class="modal fade" id="feature-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -180,11 +178,46 @@ if (isset($_GET['del'])) {
         </div>
 
 
+        <!----------Facility modal --------------->
+        <div class="modal fade" id="facility-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form id="facility_s_form">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Facility</h5>
+
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Name</label>
+                                <input type="text" name="facility_name" class="form-control shadow-none" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Icon</label>
+                                <input type="file" name="facility_icon" accept=".svg" class="form-control shadow-none" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea name = "facility_description" class="form-control shadow-none" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="reset" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                            <button type="submit" class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 
         <?php require('inc/scripts.php') ?>
 
         <script> 
             let feature_s_form = document.getElementById('feature_s_form');
+            let facility_s_form = document.getElementById('facility_s_form');
+
+
             feature_s_form.addEventListener('submit',function(e){
                 e.preventDefault();
                 add_feature();
@@ -217,6 +250,26 @@ if (isset($_GET['del'])) {
                 xhr.send(data);
             }
 
+            function rem_feature(val){
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "ajax/features_facilities.php", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                xhr.onload = function() {
+                    if(this.responseText==1){
+                        alert('success','Feature removed!');
+                        get_f();
+                    }
+                    else{
+                        alert('error','Server down!');
+                    }
+
+                }
+
+                xhr.send('rem_feature=' + val);
+
+            }
+
             function get_features(){
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "ajax/features_facilities.php", true);
@@ -233,27 +286,45 @@ if (isset($_GET['del'])) {
                 xhr.send('get_features');
             }
 
-            function rem_feature(val){
+            facility_s_form.addEventListener('submit',function(e){
+                e.preventDefault();
+                add_facility();
+            })
+
+             function add_facility(){
+                let data = new FormData();
+                data.append('name',facility_s_form.elements['facility_name'].value);  
+                data.append('icon',facility_s_form.elements['facility_icon'].files[0]); 
+                data.append('description',facility_s_form.elements['facility_description'].value);              
+                data.append('add_facility','');
+
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "ajax/features_facilities.php", true);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
 
-                xhr.onload = function() {
-                    if(this.responseText==1){
-                        alert('success','Feature removed!');
-                        get_features();
+                xhr.onload = function() { 
+                    var myModal = document.getElementById('facility-s');
+                    var modal = bootstrap.Modal.getInstance(myModal);
+                    modal.hide();
+
+                    if(this.responseText == 'inv_img'){
+                        alert('error', 'Only SVG images are allowed');
                     }
-                    elseif(this.responseText == 'room_added'){
-                        alert('error','Feature is added in Room!');
+                    else if(this.responseText == 'inv_size'){
+                        alert('error', 'Images should be less that 1MB!');
+                    }
+                    else if(this.responseText == 'upd_failed'){
+                        alert('error', 'Image upload faile. Server Down!');
+
                     }
                     else{
-                        alert('error','Server down!');
+                        alert('success','New member added!');
+                        facility_s_form.reset();    
+                        //get_members() 
                     }
-
                 }
-
-                xhr.send('rem_feature=' + val);
-
+                
+                xhr.send(data);
             }
 
             window.onload = function(){
