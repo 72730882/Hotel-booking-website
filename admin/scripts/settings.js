@@ -208,7 +208,7 @@ function add_member(){
     }
     
     xhr.send(data);
-    }
+}
 
 
     window.onload = function() {

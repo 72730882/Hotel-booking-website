@@ -173,27 +173,24 @@ if (isset($_GET['del'])) {
             </div>
         </div>
 
-        <!----------Features modal --------------->
-        <div class="modal fade" id="team-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!----------Feature modal --------------->
+        <div class="modal fade" id="feature-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <form id="team_s_form">
+                <form id="feature_s_form">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Add Team Member</h5>
+                            <h5 class="modal-title">Add Feature</h5>
 
                         </div>
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Name</label>
-                                <input type="text" name="member_name" id="member_name_inp" class="form-control shadow-none" required>
+                                <input type="text" name="feature_name" id="feature_name_inp" class="form-control shadow-none" required>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Picture</label>
-                                <input type="file" name="member_picture" id="member_picture_inp" accept=".jbg, .png, .webp, .jpeg" class="form-control shadow-none" required>
-                            </div>
+                            
                         </div>
                         <div class="modal-footer">
-                            <button type="button" onclick="member_name.value='', member_picture.value=''" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                            <button type="button" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
                             <button type="submit" onclick="upd_general(site_title.value, site_about.value)" class="btn btn-primary text-white bg-dark shadow-none">SUBMIT</button>
                         </div>
                     </div>
@@ -204,6 +201,44 @@ if (isset($_GET['del'])) {
 
 
         <?php require('inc/scripts.php') ?>
+
+        <script>
+            let feature_s_form = document.getElementById('feature_s_form');
+            feature_s_form.addEventListener('submit',function(e){
+                e.preventDefault();
+                add_feature();
+            })
+
+            function add_feature(){
+                let data = new FormData();
+                data.append('name',feature_s_form.elements['feature_name'].value);                
+                data.append('add_feature','');
+
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "ajax/features_facilities_crud.php", true);
+            
+
+                xhr.onload = function() {
+                    var myModal = document.getElementById('feature-s');
+                    var modal = bootstrap.Modal.getInstance(myModal);
+                    modal.hide();
+
+                    if(this.responseText == '1'){
+                        alert('Success','New Feature added!');
+                        feature_s_form.elements['feature_name'].value = '';
+                        get_members() // to display the image on the dashboar
+                    }
+                    else{
+                       alert('error', 'Server Down!');
+                    }
+                }
+                
+                xhr.send(data);
+            }
+        </script>
+
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
         <script src="scripts/carousel.js"></script>
 </body>
