@@ -86,7 +86,7 @@ if (isset($_GET['del'])) {
     
     <div class="container-fluid" id="main-content">
         <div class="row">
-            <div class="col-lg-10 ms-auto p-4">
+            <div class="col-lg-10 ms-auto p-4 overflow-hidden">
                 <h3 class="mb-4">Features & Facilites</h3>
 
                 <div class="card border-0 shadow-sm mb-4">
@@ -117,8 +117,42 @@ if (isset($_GET['del'])) {
                     </div>
 
                 </div>
+
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="card-title m-0">Facilities</h5>
+                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#facilities-s"><i class="bi bi-plus-square"></i> Add
+                            </button>
+                        </div>
+
+                        <div class=" table-responsive-md" style="height: 350px; overflow-y: scroll;">
+                            <table class="table table-hover border">
+                                <thead class="stikcy-top">
+                                    <tr class="bg-dark text-light">
+                                        <th scope=" col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Icon</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id ="facilities-data">
+                                    
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
             </div>
         </div>
+    </dev>
 
         <!----------Feature modal --------------->
         <div class="modal fade" id="feature-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -171,7 +205,7 @@ if (isset($_GET['del'])) {
                     modal.hide();
 
                     if(this.responseText == '1'){
-                        alert('Success','New Feature added!');
+                        alert('success','New Feature added!');
                         feature_s_form.elements['feature_name'].value = '';
                         get_features();
                     }
@@ -197,6 +231,29 @@ if (isset($_GET['del'])) {
                 
 
                 xhr.send('get_features');
+            }
+
+            function rem_feature(val){
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "ajax/features_facilities.php", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                xhr.onload = function() {
+                    if(this.responseText==1){
+                        alert('success','Feature removed!');
+                        get_features();
+                    }
+                    elseif(this.responseText == 'room_added'){
+                        alert('error','Feature is added in Room!');
+                    }
+                    else{
+                        alert('error','Server down!');
+                    }
+
+                }
+
+                xhr.send('rem_feature=' + val);
+
             }
 
             window.onload = function(){

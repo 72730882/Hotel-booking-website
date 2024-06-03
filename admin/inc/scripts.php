@@ -12,7 +12,7 @@
         document.body.append(element);
     }
 
-    function setACtive() {
+    function setActive() {
         let navbar = document.getElemenById('nav_bar');
         let a_tags = navbar.getElementsByTagName('a');
 
