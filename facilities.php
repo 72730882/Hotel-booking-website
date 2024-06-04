@@ -32,6 +32,25 @@
 
     <div class="container">
         <div class="row">
+            <?php
+                $res = selectAll('facilities');
+                $path = FACILITIES_IMG_PATH;
+
+                while($row = mysqli_fetch_assoc($res)){
+                    echo<<<data
+                        <div class="col-lg-4 md-6 mb-5 px-4">
+                            <div class="bg-white ronded shadow p-4 border-top border-4 border-dark pop">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="$path$row[icon]" width="40px">
+                                    <h5 class="m-0 ms-3">$row[name]</h5>
+                                </div>
+                                <p>$row[description]</p>
+                            </div>
+                        </div>
+                    data;
+                }
+            ?>
+
             <div class="col-lg-4 md-6 mb-5 px-4">
                 <div class="bg-white ronded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex align-items-center mb-2">

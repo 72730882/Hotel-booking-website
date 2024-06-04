@@ -63,6 +63,7 @@
                                 data;
                     }
                     ?>
+
                     <a href="<?php $contact_r['fb'] != '' ?>" class="d-inline-block mb-3 ">
                         <span class="badge bg-light text-dark fs-6 p-2">
                             <i class="bi bi-facebook me-1"></i></span>
@@ -108,7 +109,7 @@
         $frm_data = filteration($_POST);
 
 
-        $q = "INSERT INTO user_queries(name, email, subject, message) VALUES (?,?,?,?)";
+        $q = "INSERT INTO `user_queries`(`name`, `email`, `subject`, `message`) VALUES (?,?,?,?)";
         $values = [$frm_data['name'], $frm_data['email'], $frm_data['subject'], $frm_data['message']];
         $res = insert($q, $values, 'ssss');
         if ($res == 1) {
