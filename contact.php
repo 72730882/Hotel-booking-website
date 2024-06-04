@@ -34,16 +34,16 @@
                         <i class="bi bi-geo-alt"></i> <?php echo $contact_r['address'] ?></a>
                     <h5 class="mt-4">Call Us</h5>
                     <a href="tel: +<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
-                    <i class="bi bi-telephone-fill"></i>+<?php echo $contact_r['pn1'] ?>
-                </a><br>
-                <?php
-                    if ($contact_r['pn2']!=''){
-                        echo<<<data
+                        <i class="bi bi-telephone-fill"></i>+<?php echo $contact_r['pn1'] ?>
+                    </a><br>
+                    <?php
+                    if ($contact_r['pn2'] != '') {
+                        echo <<<data
                             <a href="tel: +$contact_r[pn2]" class="d-inline-block mb-2 text-decoration-none text-dark">
                             <i class="bi bi-telephone-fill"></i>+$contact_r[pn2]</a>
                         data;
-                   }
-                ?>
+                    }
+                    ?>
                     <h5 class="mt-4"> Email</h5>
                     <a href="addis: <?php echo $contact_r['email'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
                         <i class="bi bi-envelope"></i>
@@ -52,40 +52,49 @@
 
                     <h5 class="mt-4">Follow Us</h5>
                     <?php
-                    if($contact_r('tw')!=''){
-                        echo<<<data
-                        <a href="$contact_r[tw]" class="d-inline-block text-dark fs-5 me-2">
-                        <i class="bi bi-twitter"></i>
-                        </a>
-                        data;
+                    if ($contact_r['tw'] != '') {
+                        echo <<<data
+                                <a href="$contact_r[tw]" class="d-inline-block mb-3 ">
+                                <span class="badge bg-light text-dark fs-6 p-2">
+                                <i class="bi bi-twitter me-1">
+                                </i></span>
+                                </a>
+                                
+                                data;
                     }
                     ?>
-                    
-                    <a href="<?php echo $contact_r['fb'] ?>" class="d-inline-block  text-dark fs-5 me-2"><i class="bi bi-facebook"></i></a>
-                    <a href="<?php echo $contact_r['insta'] ?>" class="d-inline-block text-dark fs-5 "><i class="bi bi-instagram"></i></a>
+                    <a href="<?php $contact_r['fb'] != '' ?>" class="d-inline-block mb-3 ">
+                        <span class="badge bg-light text-dark fs-6 p-2">
+                            <i class="bi bi-facebook me-1"></i></span>
+                    </a>
+                    <a href="<?php $contact_r['insta'] != '' ?>" class="d-inline-block ">
+                        <span class="badge bg-light text-dark fs-6 p-2">
+                            <i class="bi bi-instagram me-1">
+                            </i></span>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-6 md-6 mb-5 px-4">
                 <div class="bg-white ronded shadow p-4">
-                    <form>
+                    <form method="POST">
                         <h5>send a message</h5>
                         <div class="mt-3">
                             <label class="form-label" style="font-weight: 500;">Name</label>
-                            <input type="text" class="form-control shadow-none">
+                            <input name="name" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mt-3">
                             <label class="form-label" style="font-weight: 500;">Email</label>
-                            <input type="email" class="form-control shadow-none">
+                            <input name="email" required type="email" class="form-control shadow-none">
                         </div>
                         <div class="mt-3">
                             <label class="form-label" style="font-weight: 500;">Subject</label>
-                            <input type="text" class="form-control shadow-none">
+                            <input name="subject" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mt-3">
                             <label class="form-label" style="font-weight: 500;">Message</label>
-                            <textarea class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
+                            <textarea name="message" required class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
                         </div>
-                        <button type="submit" class="btn text-black bg-custom mt-3">SEND</button>
+                        <button type="submit" name="send" class="btn text-black bg-custom mt-3">SEND</button>
                     </form>
 
                 </div>
@@ -94,6 +103,22 @@
 
         </div>
     </div>
+    <?php
+    if (isset($_POST['send'])) {
+        $frm_data = filteration($_POST);
+
+
+        $q = "INSERT INTO user_queries(name, email, subject, message) VALUES (?,?,?,?)";
+        $values = [$frm_data['name'], $frm_data['email'], $frm_data['subject'], $frm_data['message']];
+        $res = insert($q, $values, 'ssss');
+        if ($res == 1) {
+            alert('success', 'Mail sent!');
+        } else {
+            alert('error', 'Server Down! Try again Later.');
+        }
+    }
+    ?>
+
 
 
     <?php require('inc/footer.php') ?>

@@ -347,8 +347,12 @@
     </div>
 
     <!---------- reach us ---------------->
-
-    <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
+    <?php
+        $contact_q = "SELECT * FROM contact_details WHERE sr_no=?";
+        $values = [1];
+        $contact_r = mysqli_fetch_assoc(select($contact_q, $values, 'i'));
+        ?>
+     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
@@ -373,10 +377,10 @@
                              ?>
                          </div>
                          <div class="bg-white p-4 rounded mb-4">
-                             <h5>Follow Us</h5>
-                             <?php
-                             if($contact_r['tw']!=''){
-                                echo<<<data
+                        <h5>Follow Us</h5>
+                        <?php
+                        if ($contact_r['tw'] != '') {
+                            echo <<<data
                                 <a href="$contact_r[tw]" class="d-inline-block mb-3 ">
                                 <span class="badge bg-light text-dark fs-6 p-2">
                                 <i class="bi bi-twitter me-1">
@@ -384,19 +388,19 @@
                                 </a>
                                 <br>
                                 data;
-                             }
-                             ?>
-                             
-                             <a href="<?php $contact_r['fb']!=''?>" class="d-inline-block mb-3 ">
-                                <span class="badge bg-light text-dark fs-6 p-2">
-                                    <i class="bi bi-facebook me-1"></i>Facebook</span>
-                            </a><br>
-                             <a href="<?php $contact_r['inta']!=''?>" class="d-inline-block ">
-                                <span class="badge bg-light text-dark fs-6 p-2">
-                                    <i class="bi bi-instagram me-1">
-                                    </i>Instagram</span>
-                                </a><br>
-                </div>
+                        }
+                        ?>
+
+                        <a href="<?php $contact_r['fb'] != '' ?>" class="d-inline-block mb-3 ">
+                            <span class="badge bg-light text-dark fs-6 p-2">
+                                <i class="bi bi-facebook me-1"></i>Facebook</span>
+                        </a><br>
+                        <a href="<?php $contact_r['insta'] != '' ?>" class="d-inline-block ">
+                            <span class="badge bg-light text-dark fs-6 p-2">
+                                <i class="bi bi-instagram me-1">
+                                </i>Instagram</span>
+                        </a><br>
+                    </div>
 
             </div>
         </div>

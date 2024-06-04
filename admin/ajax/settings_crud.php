@@ -9,7 +9,6 @@ if(isset($_POST['get_general'])){
     $res =  select($q, $values, "i");
     $data = mysqli_fetch_assoc($res);
     $json_data =  json_encode($data);
-    header('Content-Type: application/json');
     echo $json_data;
 }
 
