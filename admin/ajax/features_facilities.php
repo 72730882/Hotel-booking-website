@@ -43,7 +43,14 @@ if (isset($_POST['rem_feature'])) {
 
 if (isset($_POST['add_facility'])) {
     $frm_data = filteration($_POST);
+    
+    // Debugging logs
+    error_log("Uploading facility: " . print_r($frm_data, true));
+    error_log("File details: " . print_r($_FILES['icon'], true));
+    
     $img_r = uploadSVGImage($_FILES['icon'], FACILITIES_FOLDER);
+
+    error_log("Image upload result: " . $img_r);
 
     if ($img_r == 'inv_img') {
         echo $img_r;
@@ -52,9 +59,8 @@ if (isset($_POST['add_facility'])) {
     } else if ($img_r == 'upd_failed') {
         echo $img_r;
     } else {
-       // INSERT INTO `facilities`(`id`, `icon`, `name`, `description`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]');
-        $q = "INSERT INTO `facilities`(`icon`,`name`, `description`) VALUES (?,?,?)";
-        $values = [$img_r,$frm_data['name'],$frm_data['description']];
+        $q = "INSERT INTO `facilities`(`icon`, `name`, `description`) VALUES (?,?,?)";
+        $values = [$img_r, $frm_data['name'], $frm_data['description']];
         $res = insert($q, $values, 'sss');
         echo $res;
     }
@@ -67,14 +73,14 @@ if (isset($_POST['get_facilities'])) {
 
     while ($row = mysqli_fetch_assoc($res)) {
         echo <<<data
-        <tr class = "align-middle">
+        <tr class="align-middle">
             <td>$i</td>
-            <td><img src = "$path[icon]" width = "100px" ></td>
-            <td>$row[name]</td>
-            <td>$row[description]</td>
+            <td><img src="{$path}{$row['icon']}" width="100px"></td>
+            <td>{$row['name']}</td>
+            <td>{$row['description']}</td>
             <td>
-                <button type="button" onclick="rem_facility($row[id])" class="btn btn-danger btn-sm shadow-none">
-                    <i class="bi bi-trash"></i>Delete
+                <button type="button" onclick="rem_facility({$row['id']})" class="btn btn-danger btn-sm shadow-none">
+                    <i class="bi bi-trash"></i> Delete
                 </button>
             </td>
         </tr>

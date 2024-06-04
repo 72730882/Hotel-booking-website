@@ -78,10 +78,10 @@ function uploadSVGImage($image, $folder)
     $valid_mime = ['image/svg+xml'];
     $img_mime = $image['type'];
 
-    if (in_array($img_mime, $valid_mime)) {
+    if (!in_array($img_mime, $valid_mime)) {
         return 'inv_img'; // invalid image mime or format
     } else if (($image['size'] / (1024 * 1024)) > 1) {
-        return 'inv_size'; //invalid size greater than 1mb
+        return 'inv_size'; // invalid size greater than 1MB
     } else {
         $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
         $rname = 'IMG_' . random_int(11111, 99999) . ".$ext";
@@ -93,6 +93,7 @@ function uploadSVGImage($image, $folder)
         }
     }
 }
+
 
 
 

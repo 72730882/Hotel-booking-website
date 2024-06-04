@@ -310,6 +310,8 @@ if (isset($_GET['del'])) {
                 var modal = bootstrap.Modal.getInstance(myModal);
                 modal.hide();
 
+                console.log(this.responseText); // Debugging
+
                 if(this.responseText == 'inv_img'){
                     alert('error', 'Only SVG images are allowed');
                 }
@@ -318,30 +320,28 @@ if (isset($_GET['del'])) {
                 }
                 else if(this.responseText == 'upd_failed'){
                     alert('error', 'Image upload faile. Server Down!');
-
                 }
-                else{
-                    alert('success','New member added!');
-                    facility_s_form.reset();    
-                    get_facilities(); 
+                else if (this.responseText == '1') {
+                    alert('success', 'New Facility added!');
+                    facility_s_form.reset();
+                    get_facilities();
+                } else {
+                    alert('error', 'Unknown error occurred!');
                 }
             }
             
             xhr.send(data);
         }
 
-        function get_facilities(){
+        function get_facilities() {
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "ajax/features_facilities.php", true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             xhr.onload = function() {
-                document.getElementById('facilities-data').innerHTML = this.responseText;
-                
-            
+                console.log(this.responseText); // Debugging
+                document.getElementById('facility-data').innerHTML = this.responseText;
             }
-
-            
 
             xhr.send('get_facilities');
         }
