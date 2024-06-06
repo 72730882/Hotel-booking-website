@@ -43,11 +43,11 @@ if (isset($_POST['rem_feature'])) {
 
 if (isset($_POST['add_facility'])) {
     $frm_data = filteration($_POST);
-    
+
     // Debugging logs
     error_log("Uploading facility: " . print_r($frm_data, true));
     error_log("File details: " . print_r($_FILES['icon'], true));
-    
+
     $img_r = uploadSVGImage($_FILES['icon'], FACILITIES_FOLDER);
 
     error_log("Image upload result: " . $img_r);
