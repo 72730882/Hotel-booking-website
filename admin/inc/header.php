@@ -12,6 +12,9 @@
                         <a class="nav-link text-white" href="dashboard.php">dashboard</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-white" href="rooms.php">Rooms</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="features_facilities.php">Features & Facilites</a>
                     </li>
                     <li class="nav-item">
