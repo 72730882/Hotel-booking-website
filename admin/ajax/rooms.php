@@ -192,7 +192,7 @@ if (isset($_POST['toggle_status']))
 }
 if (isset($_POST['add_image'])) {
     $frm_data = filteration($_POST);
-    $img_r = uploadImage($_FILES['image'], ABOUT_FOLDER);
+    $img_r = uploadImage($_FILES['image'], ROOMS_FOLDER);
 
     if ($img_r == 'inv_img') {
         echo $img_r;
