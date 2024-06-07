@@ -291,7 +291,27 @@ if (isset($_GET['del'])) {
             </form>
         </div>
     </div>
-
+<!----------Manage room images modal --------------->
+            <div class="modal fade" id="room-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> room Name</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form id="add_image_form">
+                        <label class="form-label fw-bold">Add Image</label>
+                         <input type="file" name="Image" accept=".jbg, .png, .webp, .jpeg" class="form-control shadow-none mb-3" required>
+                         <button class="btn btn-primary text-white bg-dark shadow-none">ADD</button>
+                         
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
 
  
 
