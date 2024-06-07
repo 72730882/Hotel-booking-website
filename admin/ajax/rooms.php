@@ -177,7 +177,8 @@ if (isset($_POST['edit_room'])) {
     }
 }
 
-if (isset($_POST['toggle_status'])) {
+if (isset($_POST['toggle_status']))
+ {
     $frm_data = filteration($_POST);
 
     $q = "UPDATE `rooms` SET `status`=? WHERE `id`=?";
@@ -189,4 +190,22 @@ if (isset($_POST['toggle_status'])) {
         echo 0;
     }
 }
+if (isset($_POST['add_image'])) {
+    $frm_data = filteration($_POST);
+    $img_r = uploadImage($_FILES['image'], ABOUT_FOLDER);
+
+    if ($img_r == 'inv_img') {
+        echo $img_r;
+    } else if ($img_r == 'inv_size') {
+        echo $img_r;
+    } else if ($img_r == 'upd_failed') {
+        echo $img_r;
+    } else {
+        $q = "INSERT INTO `team_details`(`name`, `picture`) VALUES (?,?)";
+        $values = [$frm_data['name'], $img_r];
+        $res = insert($q, $values, 'ss');
+        echo $res;
+    }
+}
+
 ?>
