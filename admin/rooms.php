@@ -300,6 +300,7 @@ if (isset($_GET['del'])) {
                     <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div id ="image-alert"></div>
                     <div class="border-bottom border-3 pb-3 mb-3">
                         <form id="add_image_form">
                         <label class="form-label fw-bold">Add Image</label>
@@ -491,7 +492,8 @@ function edit_details(id) {
     }
         
 
-    function toggle_status(id, val) {
+    function toggle_status(id, val) 
+    {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "ajax/rooms.php", true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -521,7 +523,7 @@ function edit_details(id) {
             data.append('add_image','');
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "ajax/carousel_crud.php", true);
+            xhr.open("POST", "ajax/rooms.php", true);
 
 
             xhr.onload = function() {
@@ -538,17 +540,29 @@ function edit_details(id) {
 
                 }
                 else{
-                    alert('Success','New Image added!');
+                    alert('Success','New Image added!', 'image-alert');
                     add_image_form.reset();
                 
                 }
             }
             xhr.send(data);
+           
     }
     function room_images(id, rname)
     {
-        document.querySelector("$room-image .modal-title")innerText =rname;
+        document.querySelector("#room-images .modal-title").innerText =rname;
         add_image_form.elements['room_id'].value=id;
+        add_image_form.elements['image'].value='';
+        let xhr = new XMLHttpRequest();
+    xhr.open("POST", "ajax/rooms.php", true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function() {
+        document.getElementById('room-image-data').innerHTML=this.responseText;
+    }
+
+    xhr.send('get_room_images'+id);
+
     }
     window.onload = function(){
         get_all_rooms();

@@ -192,7 +192,8 @@ if (isset($_POST['toggle_status']))
 }
 if (isset($_POST['add_image'])) {
     $frm_data = filteration($_POST);
-    $img_r = uploadImage($_FILES['image'], ROOMS_FOLDER);
+define('ROOMS_FOLDER', 'rooms/');
+    $img_r = uploadImage($_FILES['image'],ROOMS_FOLDER);
 
     if ($img_r == 'inv_img') {
         echo $img_r;
@@ -207,5 +208,22 @@ if (isset($_POST['add_image'])) {
         echo $res;
     }
 }
+if (isset($_POST['get_room_images'])) {
+    $frm_data = filteration($_POST);
+define('ROOMS_FOLDER', 'rooms/');
+    $img_r = uploadImage($_FILES['image'],ROOMS_FOLDER);
 
+    if ($img_r == 'inv_img') {
+        echo $img_r;
+    } else if ($img_r == 'inv_size') {
+        echo $img_r;
+    } else if ($img_r == 'upd_failed') {
+        echo $img_r;
+    } else {
+        $q = "INSERT INTO `room_images`(`room_id`, `image`) VALUES (?,?)";
+        $values = [$frm_data['room_id'], $img_r];
+        $res = insert($q, $values, 'is');
+        echo $res;
+    }
+}
 ?>
