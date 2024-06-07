@@ -539,11 +539,10 @@ function edit_details(id) {
                 }
                 else{
                     alert('Success','New Image added!');
-                    add_image_form.reset(); 
+                    add_image_form.reset();
+                
                 }
             }
-            
-
             xhr.send(data);
     }
     window.onload = function(){
