@@ -297,7 +297,7 @@ if (isset($_GET['del'])) {
                 <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"> room Name</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="border-bottom border-3 pb-3 mb-3">
@@ -516,7 +516,8 @@ function edit_details(id) {
     });
     function add_image(){
                 let data = new FormData();
-            data.append('picture',carousel_picture_inp.files[0]);
+            data.append('image',add_image_form.elements['image'].files[0]);
+            data.append('room_id',add_image_form.elements['room_id'].value);
             data.append('add_image','');
 
             let xhr = new XMLHttpRequest();
@@ -524,12 +525,10 @@ function edit_details(id) {
 
 
             xhr.onload = function() {
-                var myModal = document.getElementById('carousel-s');
-                var modal = bootstrap.Modal.getInstance(myModal);
-                modal.hide();
+              
 
                 if(this.responseText == 'inv_img'){
-                    alert('error', 'Only JPG and PNG images are allowed');
+                    alert('error', 'Only JPG, WEBP or PNG images are allowed');
                 }
                 else if(this.responseText == 'inv_size'){
                     alert('error', 'Images should be less that 2MB!');
@@ -540,10 +539,10 @@ function edit_details(id) {
                 }
                 else{
                     alert('Success','New Image added!');
-                    carousel_picture_inp.value='';
-                    get_carousel() // to display the image 
+                    add_image_form.reset(); 
                 }
             }
+            
 
             xhr.send(data);
     }
