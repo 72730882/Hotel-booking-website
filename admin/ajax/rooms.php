@@ -210,6 +210,7 @@ define('ROOMS_FOLDER', 'rooms/');
 }
 if (isset($_POST['get_room_images'])) {
     $frm_data = filteration($_POST);
+    $res=select("SELECT * FROM `room_images` WHERE 'room_id'=? ", [$frm_data['get_room_images']],'i');
 define('ROOMS_FOLDER', 'rooms/');
     $img_r = uploadImage($_FILES['image'],ROOMS_FOLDER);
 
