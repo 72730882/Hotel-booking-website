@@ -545,6 +545,11 @@ function edit_details(id) {
             }
             xhr.send(data);
     }
+    function room_images(id, rname)
+    {
+        document.querySelector("$room-image .modal-title")innerText =rname;
+        add_image_form.elements['room_id'].value=id;
+    }
     window.onload = function(){
         get_all_rooms();
     }
