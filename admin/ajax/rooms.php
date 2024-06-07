@@ -82,7 +82,7 @@ if (isset($_POST['get_all_rooms'])) {
                 <button type='button' onclick='edit_details($row[id])' class='btn btn-primary shadow-none btn-sm' data-bs-toggle='modal' data-bs-target='#edit-room'>
                     <i class='bi bi-pencil-square'></i>
                 </button>
-                 <button type='button' onclick='' class='btn btn-info shadow-none btn-sm' data-bs-toggle='modal' data-bs-target='#room-images'>
+                 <button type='button' onclick='room_images()' class='btn btn-info shadow-none btn-sm' data-bs-toggle='modal' data-bs-target='#room-images'>
                     <i class='bi bi-images'></i>
                 </button>
                 
@@ -201,9 +201,9 @@ if (isset($_POST['add_image'])) {
     } else if ($img_r == 'upd_failed') {
         echo $img_r;
     } else {
-        $q = "INSERT INTO `team_details`(`name`, `picture`) VALUES (?,?)";
-        $values = [$frm_data['name'], $img_r];
-        $res = insert($q, $values, 'ss');
+        $q = "INSERT INTO `room_images`(`room_id`, `image`) VALUES (?,?)";
+        $values = [$frm_data['room_id'], $img_r];
+        $res = insert($q, $values, 'is');
         echo $res;
     }
 }
