@@ -309,20 +309,20 @@ if (isset($_GET['del'])) {
                         </form>
                     </div>
                     <div class=" table-responsive-lg" style="height: 350px; overflow-y: scroll;">
-                            <table class="table table-hover border text-center">
-                                <thead>
-                                    <tr class="bg-dark text-light sticky-top">
-                                        <th scope=" col"width ="60%">Image</th>
-                                        <th scope="col">Thumb</th>
-                                        <th scope="col">Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody id ="room-image-data">
-                                    
-                                </tbody>
-                            </table>
+                    <table class="table table-hover border text-center">
+                        <thead>
+                            <tr class="bg-dark text-light sticky-top">
+                                <th scope=" col"width ="60%">Image</th>
+                                <th scope="col">Thumb</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id ="room-image-data">
+                            
+                        </tbody>
+                    </table>
 
-                        </div>
+                </div>
                 </div>
                 </div>
             </div>
@@ -508,8 +508,45 @@ function edit_details(id) {
     xhr.send('toggle_status=' + id + '&value=' + val);
 }
 
+    let add_image_form =document.getElementById ('add_image_form');
+    add_image_form.addEventListener('submit', function(e){
+        e.preventDefault();
+        add_image();
+
+    });
+    function add_image(){
+                let data = new FormData();
+            data.append('picture',carousel_picture_inp.files[0]);
+            data.append('add_image','');
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/carousel_crud.php", true);
 
 
+            xhr.onload = function() {
+                var myModal = document.getElementById('carousel-s');
+                var modal = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
+
+                if(this.responseText == 'inv_img'){
+                    alert('error', 'Only JPG and PNG images are allowed');
+                }
+                else if(this.responseText == 'inv_size'){
+                    alert('error', 'Images should be less that 2MB!');
+                }
+                else if(this.responseText == 'upd_failed'){
+                    alert('error', 'Image upload faile. Server Down!');
+
+                }
+                else{
+                    alert('Success','New Image added!');
+                    carousel_picture_inp.value='';
+                    get_carousel() // to display the image 
+                }
+            }
+
+            xhr.send(data);
+    }
     window.onload = function(){
         get_all_rooms();
     }
