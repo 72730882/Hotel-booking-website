@@ -82,6 +82,10 @@ if (isset($_POST['get_all_rooms'])) {
                 <button type='button' onclick='edit_details($row[id])' class='btn btn-primary shadow-none btn-sm' data-bs-toggle='modal' data-bs-target='#edit-room'>
                     <i class='bi bi-pencil-square'></i>
                 </button>
+                 <button type='button' onclick='' class='btn btn-info shadow-none btn-sm' data-bs-toggle='modal' data-bs-target='#room-images'>
+                    <i class='bi bi-images'></i>
+                </button>
+                
             </td>
         </tr>";
         $i++;
