@@ -256,4 +256,12 @@ if (isset($_POST['rem_image'])) {
         echo 0;
     }
 }
+if (isset($_POST['thumb_image'])) {
+    $frm_data = filteration($_POST);
+   $q="UPDATE `room_images` SET `thumb`='? WHERE `sr_no`=? AND `room_id`=?";
+   $v=[1,$frm_data['image_id'], $frm_data['room_id']];
+   $res=update($q,$v, 'iii');
+   echo $pre_res;
+
+}
 ?>
