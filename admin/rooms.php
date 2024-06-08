@@ -530,13 +530,13 @@ function edit_details(id) {
               
 
                 if(this.responseText == 'inv_img'){
-                    alert('error', 'Only JPG, WEBP or PNG images are allowed');
+                    alert('error', 'Only JPG, WEBP or PNG images are allowed', 'image-alert');
                 }
                 else if(this.responseText == 'inv_size'){
-                    alert('error', 'Images should be less that 2MB!');
+                    alert('error', 'Images should be less that 2MB!', 'image-alert');
                 }
                 else if(this.responseText == 'upd_failed'){
-                    alert('error', 'Image upload faile. Server Down!');
+                    alert('error', 'Image upload faile. Server Down!', 'image-alert');
 
                 }
                 else{
