@@ -518,7 +518,7 @@ function edit_details(id) {
     });
     function add_image(){
                 let data = new FormData();
-            data.append('image',add_image_form.elements['image'].files[0]);
+            data.append('Image',add_image_form.elements['Image'].files[0]);
             data.append('room_id',add_image_form.elements['room_id'].value);
             data.append('add_image','');
 
@@ -553,7 +553,7 @@ function edit_details(id) {
    
     function room_images(id, rname)
     {
-        document.querySelector("#room-images .modal-title").innerText =rname;
+        document.querySelector("#room-images .modal-title").innerText = rname;
         add_image_form.elements['room_id'].value=id;
         add_image_form.elements['image'].value='';
         let xhr = new XMLHttpRequest();
