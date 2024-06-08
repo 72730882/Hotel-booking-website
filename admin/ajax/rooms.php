@@ -217,7 +217,12 @@ if (isset($_POST['get_room_images'])) {
         echo<<<data
         <tr class ='align-middle'>
         <td> <img src = '$path$row[image]' class= 'img-fluid'></td>
-        <td> delete</td>
+        <td> thumb</td>
+        <td> 
+        <button onclick='' class='btn btn-warning btn-sm shadow-none'>
+        < class ='bi bi-trash'> </i>
+        </button>"
+        </td>
         </tr>
         data;
 

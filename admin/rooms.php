@@ -541,7 +541,9 @@ function edit_details(id) {
                 }
                 else{
                     alert('Success','New Image added!', 'image-alert');
+                    room_images(add_image_form.elements['room_id'].value,document.querySelector("#room-images .modal-title").innerText)
                     add_image_form.reset();
+                    
                 
                 }
             }
