@@ -214,14 +214,22 @@ if (isset($_POST['get_room_images'])) {
     $path= ROOMS_IMG_PATH;
     while($row = mysqli_fetch_assoc($res))
     {
+        if($row['thumb']==1){
+            $thumb_btn ="<i class='bi bi-check-lg text-light bg-success px- 2 py-1 rounded fs-5'></i>";
+        }
+        else{
+            $thumb_btn="<button onclick='thumb_image($row [sr_no], $row[room_id],)' class='btn btn-secondary shadow-none'>
+        < class ='bi bi-check-lg'> </i>
+        </button>";
+        }
         echo<<<data
         <tr class ='align-middle'>
         <td> <img src = '$path$row[image]' class= 'img-fluid'></td>
-        <td> thumb</td>
+        <td> $thumb_btn</td>
         <td> 
         <button onclick='rem_image($row [sr_no], $row[room_id],)' class='btn btn-danger btn-sm shadow-none'>
         < class ='bi bi-trash'> </i>
-        </button>"
+        </button>
         </td>
         </tr>
         data;
