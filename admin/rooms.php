@@ -304,7 +304,7 @@ if (isset($_GET['del'])) {
                     <div class="border-bottom border-3 pb-3 mb-3">
                         <form id="add_image_form">
                         <label class="form-label fw-bold">Add Image</label>
-                         <input type="file" name="Image" accept=".jbg, .png, .webp, .jpeg" class="form-control shadow-none mb-3" required>
+                         <input type="file" name="image" accept=".jbg, .png, .webp, .jpeg" class="form-control shadow-none mb-3" required>
                          <button class="btn btn-primary text-white bg-dark shadow-none">ADD</button>
                          <input type="hidden" name="room_id">
                         </form>
@@ -518,7 +518,7 @@ function edit_details(id) {
     });
     function add_image(){
                 let data = new FormData();
-            data.append('Image',add_image_form.elements['Image'].files[0]);
+            data.append('image',add_image_form.elements['image'].files[0]);
             data.append('room_id',add_image_form.elements['room_id'].value);
             data.append('add_image','');
 

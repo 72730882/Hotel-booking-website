@@ -247,12 +247,12 @@ if (isset($_POST['rem_image'])) {
     $frm_data = filteration($_POST);
     $values = [$frm_data['image_id'], $frm_data['room_id']];
 
-    $pre_q = "SELECT * FROM `room_images` WHERE `sr_no`=? AND 'room=_id'=?";
+    $pre_q = "SELECT * FROM `room_images` WHERE `sr_no`=? AND 'room_id'=?";
     $res = select($pre_q, $values, 'ii');
     $img = mysqli_fetch_assoc($res);
 
     if (deleteImage($img['image'], ROOMS_FOLDER)) {
-        $q = "DELETE FROM `room_images` WHERE `sr_no`=? AND 'room=_id'=?";
+        $q = "DELETE FROM `room_images` WHERE `sr_no`=? AND 'room_id'=?";
         $res = delete($q, $values, 'ii');
         echo $res;
     } else {
