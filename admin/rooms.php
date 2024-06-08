@@ -550,6 +550,7 @@ function edit_details(id) {
             xhr.send(data);
            
     }
+   
     function room_images(id, rname)
     {
         document.querySelector("#room-images .modal-title").innerText =rname;
@@ -566,6 +567,35 @@ function edit_details(id) {
     xhr.send('get_room_images'+id);
 
     }
+    function rem_image(img_id, room_id)
+    {
+        let data = new FormData();
+            data.append('image_id', img_id);
+            data.append('room_id',room_id);
+            data.append('rem_image','');
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/rooms.php", true);
+
+
+            xhr.onload = function() {
+              
+
+                if(this.responseText == 1){
+                    alert('Success','Image romeved!', 'image-alert');
+                    room_images(room_id, document.querySelector("#room-images .modal-title").innerText);
+                }
+                else{
+                    alert('error', 'Image revoedal failed!', 'image-alert');
+                    
+                    
+                
+                }
+            }
+            xhr.send(data);
+              
+    }
+
     window.onload = function(){
         get_all_rooms();
     }

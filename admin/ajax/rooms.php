@@ -219,7 +219,7 @@ if (isset($_POST['get_room_images'])) {
         <td> <img src = '$path$row[image]' class= 'img-fluid'></td>
         <td> thumb</td>
         <td> 
-        <button onclick='' class='btn btn-warning btn-sm shadow-none'>
+        <button onclick='rem_image($row [sr_no], $row[room_id],)' class='btn btn-danger btn-sm shadow-none'>
         < class ='bi bi-trash'> </i>
         </button>"
         </td>
