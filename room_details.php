@@ -173,7 +173,22 @@
         </p>
       </div>
       <div>
-        <h5 class="mb-3">Review and Rating</h5>
+        <h5 class="mb-5">Review and Rating</h5>
+        <div>
+          <div class="d-flex  align-items-center m-2">
+            <img src="images/testimonial/mich.jpg" width="30px">
+            <h6 class="m-0 ms-2">Michael</h6>
+          </div>
+          <p>As a seasoned traveler, I can confidently say that Addis Hotel is a true gem. The
+            combination of luxurious accommodations, world-class facilities, and impeccable service
+            is unparalleled. </p>
+          < class="rating">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+        </div>
       </div>
     </div>
   </div>

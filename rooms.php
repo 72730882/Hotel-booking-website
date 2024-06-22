@@ -83,7 +83,7 @@
       </div>
       <?php
       $room_res = select(
-        " SELECT * FROM `rooms` WHERE `status`=? AND `removed`=?",
+        " SELECT * FROM `rooms` WHERE `status`=? AND `removed`=? ORDER BY `id` DESC LIMIT 3 ",
         [1, 0],
         'ii'
       );
@@ -159,7 +159,7 @@
 
                 </div>
               </div>
-            </div>
+            </div> 
             <div class="card mb-4 border-0 shadow-none">
               <div class="row g-0 p-3 align-items-center">
                 <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
