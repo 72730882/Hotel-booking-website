@@ -97,7 +97,7 @@
 
         $features_data = "";
         while ($fea_row = mysqli_fetch_assoc($fea_q)) {
-          $features_data .= "<span class='badge rounded-pill bg-light text-dark  text-wrap'> $fea_row[name]</span>
+          $features_data .= "<span class='badge rounded-pill bg-light text-dark  text-wrap me-1 mb-1'> $fea_row[name]</span>
          ";
         }
 
@@ -109,7 +109,7 @@
 
         $facilities_data = "";
         while ($fea_row = mysqli_fetch_assoc($fea_q)) {
-          $facilities_data .= "<span class='badge rounded-pill bg-light text-dark  text-wrap'> $fea_row[name]</span>
+          $facilities_data .= "<span class='badge rounded-pill bg-light text-dark  text-wrap me-1 mb-1'> $fea_row[name]</span>
          ";
         }
 
@@ -128,38 +128,33 @@
         //print room card
       
         echo <<<data
-            <div class="col-lg-9 col-md-12 px-4">
+          <div class="col-lg-9 col-md-12 px-4">
             <div class="card mb-4 border-0 shadow-none">
               <div class="row g-0 p-3 align-items-center">
                 <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                  <img src="images/rooms/room_img/room1.jpg" class="img-fluid rounded">
+                  <img src="$room_thumb" class="img-fluid rounded">
                 </div>
                 <div class="col-md-5 px-lg-3 px-md-3 px-8">
-                  <h5 class="mb-1">Simple Room Name</h5>
+                  <h5 class="mb-1">$room_data[name]</h5>
                   <div class="features mb-3">
                     <h6 class="mb-1">Features</h6>
-                    <span class="badge rounded-pill bg-light text-dark  text-wrap">2 Rooms</span>
-                    <span class="badge rounded-pill bg-light text-dark  text-wrap">1 Bathroom</span>
-                    <span class="badge rounded-pill bg-light text-dark  text-wrap">1 Bed</span>
-                    <span class="badge rounded-pill bg-light text-dark  text-wrap">Kitchen</span>
+                    $features_data
                   </div>
                   <div class="facilities mb-3">
                     <h6 class="mb-1 mt-3">Facilities</h6>
-                    <span class="badge rounded-pill bg-light text-dark  text-wrap">wi fi</span>
-                    <span class="badge rounded-pill bg-light text-dark  text-wrap">Room Heater</span>
-                    <span class="badge rounded-pill bg-light text-dark  text-wrap">Television</span>
+                    $facilities_data
                   </div>
                   <div class="guests mb-3">
                     <h6 class="mb-1 mt-3">Guests</h6>
-                    <span class="badge rounded-pill bg-light text-dark  text-wrap">5 Adults</span>
-                    <span class="badge rounded-pill bg-light text-dark  text-wrap">4 children</span>
+                    <span class="badge rounded-pill bg-light text-dark  text-wrap">$room_data[adult] Adults</span>
+                    <span class="badge rounded-pill bg-light text-dark  text-wrap">$room_data[children] children</span>
                   </div>
                 </div>
 
                 <div class="col-md-2 text-center">
-                  <h6 class="mb-4">100USD per night</h6>
+                  <h6 class="mb-4">$room_data[price]USD per night</h6>
                   <a href="#" class="btn btn-primary text-white w-100 shadow-none mb-2">Book Now</a>
-                  <a href="#" class="btn btn-sa btn-outline-dark w-100 rounded-0 fw-bold shadow-none">More
+                  <a href="room_details.php?id=$room_data[id]" class="btn btn-sa btn-outline-dark w-100 rounded-0 fw-bold shadow-none">More
                     details</a>
 
                 </div>
