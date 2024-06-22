@@ -16,6 +16,7 @@ define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
 define('FACILITIES_FOLDER', 'facilities/');
 define('ROOMS_FOLDER', 'rooms/');
+define('USERS_FOLDER', 'users/');
 
 function adminLogin()
 {
@@ -50,14 +51,14 @@ function uploadImage($image, $folder)
     $valid_mime = ['image/jpeg', 'image/png', 'image/webp'];
     $img_mime = $image['type'];
 
-    if (in_array($img_mime, $valid_mime)) {
+    if (!in_array($img_mime, $valid_mime)) {
         return 'inv_img'; // invalid image mime or format
     } else if (($image['size'] / (1024 * 1024)) > 2) {
         return 'inv_size'; //invalid size greater than 2mb
     } else {
         $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
-        $rname = 'IMG_' . random_int(11111, 99999) . ".$ext";
-        $img_path = UPLOAD_IMAGE_PATH . $folder . $rname;
+        $rname = 'IMG_'.random_int(11111, 99999).".$ext";
+        $img_path = UPLOAD_IMAGE_PATH.$folder.$rname;
         if (move_uploaded_file($image['tmp_name'], $img_path)) {
             return $rname;
         } else {
@@ -96,7 +97,39 @@ function uploadSVGImage($image, $folder)
     }
 }
 
+function uploadUserImage($image)
+{
+    $valid_mime = ['image/jpeg', 'image/png', 'image/webp'];
+    $img_mime = $image['type'];
 
+    if (!in_array($img_mime, $valid_mime)) {
+        return 'inv_img'; // invalid image mime or format
+    } 
+     else {
+        $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+        $rname = 'IMG_'.random_int(11111, 99999).".jpeg";
+
+        $img_path = UPLOAD_IMAGE_PATH.USERS_FOLDER.$rname;
+
+        if($ext == 'png' || $ext == 'PNG'){
+            $img = imagecreatefrompng($image['tmp_name']);
+        }
+        else if($ext == 'webp' || $ext == 'WEBP'){
+            $img = imagecreatefromwebp($image['tmp_name']);
+        }
+        else{
+            $img = imagecreatefromjpeg($image['tmp_name']);
+
+        }
+
+
+        if (imagejpeg($img,$img_path,75)) {
+            return $rname;
+        } else {
+            return 'upd_failed';
+        }
+    }
+}
 
 
 

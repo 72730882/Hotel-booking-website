@@ -1,4 +1,4 @@
-<footer class="footer">
+<div class="footer">
     <div class="container-fluid bg-white mt-5">
         <div class="row">
             <div class="col-lg-4 p-4">
@@ -31,7 +31,11 @@
             </div>
         </div>
     </div>
-    <footer class="text-center bg-dark text-white p-4 m-0 ">Designed and Developed by Addis Hotel</footer>
+</div>
+    <h6 class="text-center bg-dark text-white p-4 m-0 ">Designed and Developed by Addis Hotel</h6>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></script>
+
+
     <script>
         function setACtive() {
             let navbar = document.getElemenById('nav_bar');
@@ -46,6 +50,38 @@
                 }
             }
         }
-        setActive();
+
+       let register_form = document.getElementById('register-form');
+
+       register_form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+
+        let data = new FormData();
+
+        data.append('name',register_form.elements['name'].value);
+        data.append('email',register_form.elements['email'].value);
+        data.append('phonenum',register_form.elements['phonenum'].value);
+        data.append('address',register_form.elements['address'].value);
+        data.append('pincode',register_form.elements['pincode'].value);
+        data.append('dob',register_form.elements['dob'].value);
+        data.append('pass',register_form.elements['pass'].value);
+        data.append('cpass',register_form.elements['cpass'].value);
+        data.append('profile',register_form.elements['profile'].files[0]);
+        data.append('register','');
+
+        var myModal = document.getElementById('registerModal');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/login_register.php", true);
+        
+        xhr.onload = function(){
+
+        }
+
+        xhr.send(data);
+    });
+    
+    setActive();
     </script>
-</footer>
