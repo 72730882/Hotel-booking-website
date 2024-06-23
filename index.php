@@ -20,11 +20,10 @@
 </head>
 
 <body class="bg-light">
-<<<<<<< HEAD
+
     <?php require('inc/header.php')?>
-=======
+
     <?php require ('inc/header.php') ?>
->>>>>>> 89a6e91 (add mor room details and rooms debuging)
     <!------ carousel ------>
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container">
