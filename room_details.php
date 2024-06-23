@@ -169,7 +169,7 @@
       <div class="col-12 mt-4 px-4">
         <h5>Description</h5>
         <p>
-          <?php echo $room_data[desc] ?>
+          <?php echo $room_data['desc'] ?>
         </p>
       </div>
       <div>
