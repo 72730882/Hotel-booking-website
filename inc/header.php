@@ -86,12 +86,12 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form id="register-form">
+            <form id="register-form" action="Form.php"  Method="POST">
                 <div class="modal-header">
                     <h5 class="modal-title d-flex align-items-center">
-                        <i class="bi bi-person-lines-fill fs-3 me-2"></i> </i>User Registration
+                        <i class="bi bi-person-lines-fill fs-3 me-2"></i>User Registration
                     </h5>
-                    <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -101,43 +101,44 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
                                 <label class="form-label">Name</label>
                                 <input name="name" type="text" class="form-control shadow-none" required>
                             </div>
-                            <div class="col-md-6 p-0" mb-3>
+                            <div class="col-md-6 pe-0 mb-3">
                                 <label class="form-label">Email</label>
                                 <input name="email" type="email" class="form-control shadow-none" required>
                             </div>
                             <div class="col-md-6 ps-0 mb-3">
-                                <label class="form-label">phone Number</label>
-                                <input name="phonenum" type="number" class="form-control shadow-none" required>
-                            </div>
-                            <div class="col-md-6 p-0 mb-3">
-                                <label class="form-label">Picture</label>
-                                <input name="profile" type="file" accept=".jpg, .png, .jpeg, .webp"
-                                    class="form-control shadow-none" required>
-                            </div>
-                            <div class="col-md-6 p-0 mb-3">
                                 <label class="form-label">Address</label>
                                 <textarea name="address" class="form-control shadow-none" rows="1" required></textarea>
                             </div>
+                            <div class="col-md-6 pe-0 mb-3">
+                                <label class="form-label">Phone Number</label>
+                                <input name="phonenum" type="tel" class="form-control shadow-none" required>
+                            </div>
                             <div class="col-md-6 ps-0 mb-3">
-                                <label class="form-label">pincode</label>
+                                <label class="form-label">Pincode</label>
                                 <input name="pincode" type="number" class="form-control shadow-none" required>
                             </div>
-                            <div class="col-md-6 p-0 mb-10">
-                                <label class="form-label">Age</label>
+                            <div class="col-md-6 pe-0 mb-3">
+                                <label class="form-label">Date of Birth</label>
                                 <input name="dob" type="date" class="form-control shadow-none" required>
                             </div>
+                           
                             <div class="col-md-6 ps-0 mb-3">
-                                <label class="form-label">password</label>
+                                <label class="form-label">Password</label>
                                 <input name="pass" type="password" class="form-control shadow-none" required>
                             </div>
-                            <div class="col-md-6 p-0 mb-3">
-                                <label class="form-label">Confirm password</label>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Profile Picture</label>
+                                <input name="profile" type="file" accept=".jpg, .png, .jpeg, .webp"
+                                    class="form-control shadow-none" required>
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Confirm Password</label>
                                 <input name="cpass" type="password" class="form-control shadow-none" required>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div clas="text-center my-1">
+                <div class="modal-footer">
                     <button type="submit" class="btn btn-dark shadow-none">REGISTER</button>
                 </div>
             </form>
