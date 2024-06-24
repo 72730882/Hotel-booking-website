@@ -21,6 +21,7 @@
 
 <body class="bg-light">
 
+    <?php require('inc/header.php')?>
 
     <?php require ('inc/header.php') ?>
     <!------ carousel ------>
@@ -92,7 +93,7 @@
                 [1, 0],
                 'ii'
             );
-            while ($room_data == mysqli_fetch_assoc($room_res)) {
+            while ($room_data = mysqli_fetch_assoc($room_res)) {
 
                 //get features of room
             
