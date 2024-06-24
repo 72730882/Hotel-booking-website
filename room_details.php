@@ -74,14 +74,14 @@
 
             ?>
           </div>
-          // <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
-            // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            // <span class="visually-hidden">Previous</span>
-            // </button>
-          // <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
-            // <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            // <span class="visually-hidden">Next</span>
-            // </button>
+           <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+             <span class="visually-hidden">Previous</span>
+             </button>
+           <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+             <span class="carousel-control-next-icon" aria-hidden="true"></span>
+             <span class="visually-hidden">Next</span>
+             </button>
         </div>
       </div>
       <div class="col-lg-5 col-md-12 px-4">
@@ -110,7 +110,7 @@
                  WHERE rfac.room_id='$room_data[id]'");
 
             $features_data = "";
-            while ($fea_row = mysqli_fetch_assoc($fea_q)) {
+            while ($fea_row = mysqli_fetch_assoc($fac_q)) {
               $features_data .= "<span class='badge rounded-pill bg-light text-dark  text-wrap me-1 mb-1'> 
                $fea_row[name]</span>";
             }
@@ -127,7 +127,7 @@
                 WHERE rfac.room_id='$room_data[id]'");
 
             $facilities_data = "";
-            while ($fea_row = mysqli_fetch_assoc($fea_q)) {
+            while ($fea_row = mysqli_fetch_assoc($fac_q)) {
               $facilities_data .= "<span class='badge rounded-pill bg-light text-dark  text-wrap me-1 mb-1'>
                $fea_row[name]</span>";
             }
@@ -152,7 +152,7 @@
              <div class="mb-1">
              <h6 class="mb-1 mt-3">Area</h6>
              <span class="badge rounded-pill bg-light text-dark  text-wrap">
-             $fea_row[name]
+    
              $room_data[area] sq. ft.             
              </span>
              </div>
@@ -169,7 +169,7 @@
       <div class="col-12 mt-4 px-4">
         <h5>Description</h5>
         <p>
-          <?php echo $room_data['desc'] ?>
+          <?php echo $room_data['description'] ?>
         </p>
       </div>
       <div>
@@ -182,7 +182,7 @@
           <p>As a seasoned traveler, I can confidently say that Addis Hotel is a true gem. The
             combination of luxurious accommodations, world-class facilities, and impeccable service
             is unparalleled. </p>
-          < class="rating">
+            <i class="rating">
             <i class="bi bi-star-fill text-warning"></i>
             <i class="bi bi-star-fill text-warning"></i>
             <i class="bi bi-star-fill text-warning"></i>
