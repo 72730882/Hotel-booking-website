@@ -1,7 +1,9 @@
 <?php
 session_start();
+require('admin/inc/db_config.php');
+require('admin/inc/essentials.php');
 
-// Database connection details
+// Database connection details (replace with your own)
 $servername = "localhost";
 $username = "root";
 $password = "";

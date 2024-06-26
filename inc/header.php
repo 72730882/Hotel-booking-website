@@ -3,6 +3,17 @@ session_start();
 require('admin/inc/db_config.php');
 require('admin/inc/essentials.php');
 
+// Check if user is logged in
+if (isset($_SESSION['user'])) {
+    // User is logged in
+    $userName = $_SESSION['user']['name'];
+    $userProfile = $_SESSION['user']['profile'];
+    $isLoggedIn = true;
+} else {
+     // User is not logged in
+    $isLoggedIn = false;
+}
+
 $contact_q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
 $value = [1];
 $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
@@ -37,9 +48,9 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
             </ul>
 
             <div class="d-flex">
-                <?php if (isset($_SESSION['user'])): ?>
+                <?php if ($isLoggedIn): ?>
                     <div id="profilePic" class="position-relative">
-                        <img src="<?php echo $_SESSION['user']['profile']; ?>" alt="Profile Picture" class="rounded-circle" style="width: 40px; height: 40px; cursor: pointer;">
+                        <img src="<?php  echo $userProfile; ?>" alt="Profile Picture" class="rounded-circle" style="width: 40px; height: 40px; cursor: pointer;">
                     </div>
                 <?php else: ?>
                     <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal"
@@ -210,27 +221,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Handle logout button click
     document.querySelector('#logoutButton').addEventListener('click', function () {
-        fetch('logout.php', {
-            method: 'POST'
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Logout successful, hide modal
-                $('#profileModal').modal('hide');
-                // Reload the page to update UI
-                location.reload();
-            } else {
-                // Display error message if needed
-                alert(data.message); // Replace with appropriate error handling
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Display error message if AJAX request fails
-            alert('An error occurred. Please try again.'); // Replace with appropriate error handling
-        });
+        // Handle logout button click
+document.querySelector('#logoutButton').addEventListener('click', function () {
+    fetch('logout.php', {
+        method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Logout successful, hide modal
+            $('#profileModal').modal('hide');
+            // Reload the page to update UI
+            location.reload();
+        } else {
+            // Display error message if needed
+            alert(data.message); // Replace with appropriate error handling
+        }
+    })
+    .catch(error => {
+        console.error('Logout error:', error); // Log the error for debugging
+        // Display error message if AJAX request fails
+        alert('An error occurred. Please try again.'); // Replace with appropriate error handling
     });
+});
+
+
+});
+
 
     // Check if user is logged in
     <?php if (isset($_SESSION['user'])): ?>
@@ -242,3 +259,5 @@ document.addEventListener('DOMContentLoaded', function () {
     <?php endif; ?>
 });
 </script>
+
+
