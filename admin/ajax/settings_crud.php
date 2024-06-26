@@ -4,8 +4,7 @@ require('../inc/essentials.php');
 adminLogin();
 
 if (isset($_POST['get_general'])) {
-    $q = "SELECT * FR
-    OM `settings` WHERE `sr_no`=?";
+    $q = "SELECT * FROM `settings` WHERE `sr_no`=?";
     $values = [1];
     $res =  select($q, $values, "i");
     $data = mysqli_fetch_assoc($res);
@@ -50,7 +49,7 @@ if (isset($_POST['upd_contacts'])) {
     echo $res;
 }
 
-if (isset($_POST['add_member'gi])) {
+if (isset($_POST['add_member'])) {
     $frm_data = filteration($_POST);
     $img_r = uploadImage($_FILES['picture'], ABOUT_FOLDER);
 
