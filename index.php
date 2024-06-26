@@ -27,21 +27,16 @@
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container">
             <div class="swiper-wrapper">
-                <?php
-                $res = selectAll('carousel');
-                while ($row = mysqli_fetch_assoc($res)) {
-                    $path = CAROUSEL_IMG_PATH;
-                    echo <<<data
-                            <div class="swiper-slide">
-                            <img src="$path$row[image]" class="d-block" />
-                            </div>
-                        data;
-                }
-                ?>
+                
+                <div class="swiper-slide">
+                    <img src="images/carousel/hot.jpg" class="d-block img-fluid" alt="Carousel Image">
+                </div>
             </div>
+    
+            <div class="swiper-pagination"></div>
         </div>
     </div>
-    <!----- check availability form---->
+  
     <div class="container availability-form">
         <div class="row">
             <div class="col-lg-12 bg-white shadow m-10 P-4 rounded">
