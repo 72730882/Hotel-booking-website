@@ -31,12 +31,14 @@ $stmt = $conn->prepare("INSERT INTO user_cred (name, email, address, phonenum, p
 $stmt->bind_param("sssssssss", $name, $email, $address, $phone, $pin, $dob, $profile, $password, $cpass);
 
 // Execute the statement
+// Execute the statement
 if ($stmt->execute()) {
-    header("Location: success.php");
-    exit;
+    // Display a success message using JavaScript alert
+    echo "<script>alert('Registered successfully');</script>";
 } else {
     echo "Error: " . $stmt->error;
 }
+
 
 // Close the statement and connection
 $stmt->close();

@@ -13,22 +13,21 @@ function get_users() {
     xhr.send('get_users');
 }
 
-// function toggle_status(id, val) {
-//     let xhr = new XMLHttpRequest();
-//     xhr.open("POST", "ajax/rooms.php", true);
-//     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+function toggle_status(id, val) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "ajax/users.php", true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-//     xhr.onload = function () {
-//         if (this.responseText == 1) {
-//             alert('success', 'Status toggled!');
-//             get_all_rooms();
-//         } else {
-//             alert('error', 'Server down');
-//         }
-//     }
-
-//     xhr.send('toggle_status=' + id + '&value=' + val);
-// }
+    xhr.onload = function () {
+        if (this.responseText == 1) {
+            alert('success', 'Status toggled!');
+            get_users();
+        } else {
+            alert('error', 'Server down');
+        }
+    }
+xhr.send('toggle_status=' + id + '&value=' + val);
+}
 
 // let add_image_form = document.getElementById('add_image_form');
 // add_image_form.addEventListener('submit', function (e) {
@@ -140,34 +139,34 @@ function get_users() {
 //     xhr.send(data);
 
 // }
-// function remove_room(room_id) {
-//     if (confirm("Are you sure, you want to delete this room?")) {
-//         let data = new FormData();
-//         data.append('room_id', room_id);
-//         data.append('remove_room', '');
+function remove_user(user_id) {
+    if (confirm("Are you sure, you want to remove this user?")) {
+        let data = new FormData();
+        data.append('user_id', user_id);
+        data.append('remove_user', '');
 
-//         let xhr = new XMLHttpRequest();
-//         xhr.open("POST", "ajax/rooms.php", true);
-
-
-//         xhr.onload = function () {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/users.php", true);
 
 
-//             if (this.responseText == 1) {
-//                 alert('Success', 'Room removed!');
-//                 get_all_rooms();
-//             }
-//             else {
-//                 alert('error', 'Room removal failed!');
+        xhr.onload = function () {
+
+
+            if (this.responseText == 1) {
+                alert('Success', 'user removed!');
+                get_users();
+            }
+            else {
+                alert('error', 'user removal failed!');
 
 
 
-//             }
-//         }
-//         xhr.send(data);
-//     }
+            }
+        }
+        xhr.send(data);
+    }
 
-// }
+}
 
 window.onload = function () {
     get_users();
