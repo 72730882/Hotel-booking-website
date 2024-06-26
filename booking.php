@@ -186,17 +186,17 @@
                                                 </div>
                                                 <div class="col-12 mb-3">
                                                     <label for="total-price" class="form-label fw-bold">Total Price</label>
-                                                    <input type="text" class="form-control" id="total-price" name="total-price" readonly>
+                                                    <input type="text" class="form-control" id="total-price" name="total_price" readonly>
                                                 </div>
                                             </div>
                                             <input type="hidden" name="room_id" value="<?php echo $room_data['id']; ?>">
-                                            <!-- Add more form fields as needed -->
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-primary">Book Now</button>
                                         </div>
                                     </form>
+
                                 </div>
                             </div>
                         </div>

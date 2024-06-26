@@ -1,39 +1,45 @@
 <?php
-// login.php
+session_start();
 
-require('admin/inc/db_config.php');
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "hotel-booking-website";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['email']) && isset($_POST['password'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
 
-        // Hash the password (consider using bcrypt or a stronger hashing method)
-        $hashed_password = md5($password); // Example: using MD5 (not recommended for real applications)
-
-        // Prepare SQL statement
-        $stmt = $conn->prepare("SELECT * FROM `user_cred` WHERE `email`=? AND `password`=?");
-        $stmt->bind_param("ss", $email, $hashed_password); // 'ss' indicates two string parameters
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows > 0) {
-            // Login successful
-            session_start(); // Start session if not already started
-            $_SESSION['email'] = $email; // Store user data in session if needed
-
-            // Redirect or send response indicating success
-            echo json_encode(['success' => true]);
-            exit;
-        } else {
-            // Login failed
-            echo json_encode(['success' => false, 'message' => 'Invalid credentials']);
-            exit;
-        }
-    } else {
-        // Handle case where email or password is missing
-        echo json_encode(['success' => false, 'message' => 'Email and password are required']);
-        exit;
-    }
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+// Get login credentials
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+// Prepare SQL statement to fetch user data
+$stmt = $conn->prepare("SELECT * FROM user_cred WHERE email = ? AND password = ?");
+$stmt->bind_param("ss", $email, $password);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+    // Store user information in the session
+    $_SESSION['user'] = [
+        'name' => $user['name'],
+        'email' => $user['email'],
+        'profile' => 'uploads/' . $user['profile']
+    ];
+
+    echo json_encode(['success' => true]);
+} else {
+    echo json_encode(['success' => false, 'message' => 'Invalid login credentials']);
+}
+
+// Close the statement and connection
+$stmt->close();
+$conn->close();
 ?>
