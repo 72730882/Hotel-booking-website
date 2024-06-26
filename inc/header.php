@@ -1,3 +1,10 @@
+
+<script>
+    // JavaScript function to redirect to a PHP file
+    function redirectToLogout() {
+        window.location.href = 'logout.php';
+    }
+</script>
 <?php
 session_start();
 require('admin/inc/db_config.php');
@@ -82,7 +89,7 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
                 <h5><?php echo $_SESSION['user']['name']; ?></h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-dark" id="logoutButton">Logout</button>
+                <button type="button" onclick="redirectToLogout()" class="btn btn-dark" id="logoutButton">Logout</button>
             </div>
         </div>
     </div>
@@ -205,6 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(data => {
+            console.log('Login response:', data); // Log the response for debugging
             if (data.success) {
                 // Login successful, hide modals
                 $('#loginModal').modal('hide');
@@ -217,35 +225,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.error('Login error:', error);
             // Display error message if AJAX request fails
             alert('An error occurred. Please try again.'); // Replace with appropriate error handling
         });
     });
 
-    // Handle logout button click
-    document.querySelector('#logoutButton').addEventListener('click', function () {
-        fetch('logout.php', {
-            method: 'GET'
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Logout successful, hide modal
-                $('#profileModal').modal('hide');
-                // Reload the page to update UI
-                location.reload();
-            } else {
-                // Display error message if needed
-                alert('Logout failed. Please try again.'); // Replace with appropriate error handling
-            }
-        })
-        .catch(error => {
-            console.error('Logout error:', error); // Log the error for debugging
-            // Display error message if AJAX request fails
-            alert('An error occurred. Please try again.'); // Replace with appropriate error handling
-        });
-    });
 
     // Check if user is logged in and adjust UI
     <?php if ($isLoggedIn): ?>
@@ -255,3 +240,6 @@ document.addEventListener('DOMContentLoaded', function () {
     <?php endif; ?>
 });
 </script>
+
+
+

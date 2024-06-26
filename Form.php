@@ -45,7 +45,8 @@ if ($stmt->execute()) {
     ];
 
     echo "<script>alert('Registered successfully');</script>";
-    echo "<script>window.location = 'index.php';</script>";
+    header("Location: index.php");
+    exit();
 } else {
     echo "Error: " . $stmt->error;
 }

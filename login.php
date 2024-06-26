@@ -37,6 +37,8 @@ if ($result->num_rows > 0) {
     ];
 
     echo json_encode(['success' => true]);
+    header("Location: index.php");
+    exit();
 } else {
     echo json_encode(['success' => false, 'message' => 'Invalid login credentials']);
 }
