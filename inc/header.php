@@ -10,7 +10,7 @@ if (isset($_SESSION['user'])) {
     $userProfile = $_SESSION['user']['profile'];
     $isLoggedIn = true;
 } else {
-     // User is not logged in
+    // User is not logged in
     $isLoggedIn = false;
 }
 
@@ -29,9 +29,9 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link  me-2" href="index.php">Home <span class="sr-only"></span></a>
+                    <a class="nav-link me-2" href="index.php">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link me-2" href="rooms.php">Rooms</a>
@@ -50,7 +50,8 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
             <div class="d-flex">
                 <?php if ($isLoggedIn): ?>
                     <div id="profilePic" class="position-relative">
-                        <img src="<?php  echo $userProfile; ?>" alt="Profile Picture" class="rounded-circle" style="width: 40px; height: 40px; cursor: pointer;">
+                        <img src="<?php echo $userProfile; ?>" alt="Profile Picture" class="rounded-circle"
+                            style="width: 40px; height: 40px; cursor: pointer;">
                     </div>
                 <?php else: ?>
                     <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal"
@@ -76,7 +77,8 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-                <img src="<?php echo $_SESSION['user']['profile']; ?>" alt="Profile Picture" class="rounded-circle mb-3" style="width: 100px; height: 100px;">
+                <img src="<?php echo $_SESSION['user']['profile']; ?>" alt="Profile Picture"
+                    class="rounded-circle mb-3" style="width: 100px; height: 100px;">
                 <h5><?php echo $_SESSION['user']['name']; ?></h5>
             </div>
             <div class="modal-footer">
@@ -86,6 +88,7 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
     </div>
 </div>
 
+<!-- Login Modal -->
 <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -117,6 +120,7 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
     </div>
 </div>
 
+<!-- Register Modal -->
 <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -221,43 +225,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Handle logout button click
     document.querySelector('#logoutButton').addEventListener('click', function () {
-        // Handle logout button click
-document.querySelector('#logoutButton').addEventListener('click', function () {
-    fetch('logout.php', {
-        method: 'GET'
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Logout successful, hide modal
-            $('#profileModal').modal('hide');
-            // Reload the page to update UI
-            location.reload();
-        } else {
-            // Display error message if needed
-            alert(data.message); // Replace with appropriate error handling
-        }
-    })
-    .catch(error => {
-        console.error('Logout error:', error); // Log the error for debugging
-        // Display error message if AJAX request fails
-        alert('An error occurred. Please try again.'); // Replace with appropriate error handling
+        fetch('logout.php', {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Logout successful, hide modal
+                $('#profileModal').modal('hide');
+                // Reload the page to update UI
+                location.reload();
+            } else {
+                // Display error message if needed
+                alert('Logout failed. Please try again.'); // Replace with appropriate error handling
+            }
+        })
+        .catch(error => {
+            console.error('Logout error:', error); // Log the error for debugging
+            // Display error message if AJAX request fails
+            alert('An error occurred. Please try again.'); // Replace with appropriate error handling
+        });
     });
-});
 
-
-});
-
-
-    // Check if user is logged in
-    <?php if (isset($_SESSION['user'])): ?>
+    // Check if user is logged in and adjust UI
+    <?php if ($isLoggedIn): ?>
         document.querySelector('#loginButton').style.display = 'none';
         document.querySelector('#registerButton').style.display = 'none';
-        const profilePic = document.querySelector('#profilePic');
-        profilePic.classList.remove('d-none');
-        profilePic.querySelector('img').src = '<?php echo $_SESSION['user']['profile']; ?>';
+        document.querySelector('#profilePic').classList.remove('d-none');
     <?php endif; ?>
 });
 </script>
-
-

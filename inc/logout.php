@@ -3,7 +3,7 @@ session_start();
 
 // Perform logout logic
 if (isset($_SESSION['user'])) {
-    unset($_SESSION['user']); // Unset or destroy session data
+    //unset($_SESSION['user']); // Unset or destroy session data
     session_destroy(); // Destroy the session
     $response = ['success' => true];
 } else {
