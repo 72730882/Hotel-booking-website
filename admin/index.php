@@ -3,7 +3,7 @@
 require('inc/essentials.php');
 require('inc/db_config.php');
 
-//session_start();
+session_start();
 if (isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true) {
     redirect('dashboard.php');
 }
@@ -45,7 +45,7 @@ if (isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true) {
                 <div class="mb-4">
                     <input name="admin_password" required type="password" class="form-control shadow-none text-center" placeholder="Password">
                 </div>
-                <button type="submit" name="login" class="btn btn-dark text-black  boarder white customer-bg ">Login</button>
+                <button type="submit" name="login" class="btn btn-dark text-white  boarder white customer-bg ">Login</button>
             </div>
         </form>
     </div>

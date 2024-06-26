@@ -29,21 +29,16 @@
 </div>
 
 <script>
+// Add 'active' class to the current nav link based on the URL path
 document.addEventListener("DOMContentLoaded", function() {
-    // Get all the nav links inside the adminDropdown
+    var currentLocation = window.location.href;
     var navLinks = document.querySelectorAll("#adminDropdown .nav-link");
 
-    // Add click event listener to each nav link
+    // Loop through each nav link and set 'active' class based on the URL
     navLinks.forEach(function(navLink) {
-        navLink.addEventListener("click", function(event) {
-            // Remove 'active' class from all nav links
-            navLinks.forEach(function(link) {
-                link.classList.remove("active");
-            });
-
-            // Add 'active' class to the clicked nav link
-            this.classList.add("active");
-        });
+        if (navLink.href === currentLocation) {
+            navLink.classList.add("active");
+        }
     });
 });
 </script>

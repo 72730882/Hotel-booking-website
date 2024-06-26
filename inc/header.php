@@ -54,7 +54,7 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="">
+            <form  id="loginForm" action="login.php" action="login.php" method="POST">
                 <div class="modal-header">
                     <h5 class="modal-title d-flex align-items-center">
                         <i class="bi bi-person-circle fs-3 me-2"></i>User Login
@@ -65,11 +65,11 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
                 <div class="modal-body">
                     <div class="mb-3">
                         <label class="form-label">Email Address</label>
-                        <input type="email" class="form-control shadow-none">
+                        <input type="email" name="email" class="form-control shadow-none">
                     </div>
                     <div class="mb-4">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control shadow-none">
+                        <input type="password"  name="password" class="form-control shadow-none">
                     </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-between mb-2">
@@ -145,3 +145,38 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
         </div>
     </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Handle form submission via AJAX
+    document.querySelector('#loginForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        // Collect form data
+        let formData = new FormData(this);
+
+        // Send AJAX request
+        fetch('login.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Login successful, hide modals
+                $('#loginModal').modal('hide');
+                $('#registerModal').modal('hide');
+                // Optionally reload the page or redirect to another page
+                location.reload(); // Example: reload current page
+            } else {
+                // Display error message if needed
+                alert(data.message); // Replace with appropriate error handling
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Display error message if AJAX request fails
+            alert('An error occurred. Please try again.'); // Replace with appropriate error handling
+        });
+    });
+});
+</script>
