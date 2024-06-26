@@ -20,7 +20,6 @@ if (isset($_POST['get_users'])) {
         <td>$row[pincode]</td>
         <td>$row[dob]</td>
         <td>$row[profile]</td>
-        
         </tr>
         ";
         $i++;
