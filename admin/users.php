@@ -111,6 +111,7 @@ if (isset($_GET['del'])) {
                                         <th scope="col">pincode</th>
                                         <th scope="col">DOB</th>
                                         <th scope="col">Profile</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody id="users-data">
