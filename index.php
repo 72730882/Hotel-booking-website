@@ -21,9 +21,8 @@
 
 <body class="bg-light">
 
-    <?php require('inc/header.php')?>
-
     <?php require ('inc/header.php') ?>
+
     <!------ carousel ------>
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container">

@@ -86,7 +86,7 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form id="register-form" action="Form.php"  Method="POST">
+            <form action="Form.php"  Method="POST">
                 <div class="modal-header">
                     <h5 class="modal-title d-flex align-items-center">
                         <i class="bi bi-person-lines-fill fs-3 me-2"></i>User Registration
