@@ -31,6 +31,18 @@
                 <div class="swiper-slide">
                     <img src="images/carousel/hot.jpg" class="d-block img-fluid" alt="Carousel Image">
                 </div>
+                <div class="swiper-slide">
+                    <img src="images/carousel/hot2.jpg" class="d-block img-fluid" alt="Carousel Image">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/carousel/im1.jpg" class="d-block img-fluid" alt="Carousel Image">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/carousel/im2.webp" class="d-block img-fluid" alt="Carousel Image">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/carousel/im3.jpg" class="d-block img-fluid" alt="Carousel Image">
+                </div>
             </div>
     
             <div class="swiper-pagination"></div>
