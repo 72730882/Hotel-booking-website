@@ -1,5 +1,4 @@
-<!DOCTYPE html
-<html>
+<!DOCTYPE html <html>
 
 <head>
     <meta charset="UTF-8">
@@ -215,8 +214,8 @@
                 <div class="swiper-wrapper  bg-white ">
                     <div class="swiper-slide bg-white p-4  ">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/david.jpg" width="30px">
-                            <h6 class="m-0 ms-2">David</h6>
+                            <img src="images/about/fayo.png" width="30px">
+                            <h6 class="m-0 ms-2">Faiza</h6>
                         </div>
                         <p> Addis Hotel is now my go-to choice whenever I visit the city."</p>
                         <div class="rating">
@@ -229,8 +228,8 @@
                     </div>
                     <div class="swiper-slide bg-white py-2 px-5">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/mich.jpg" width="30px">
-                            <h6 class="m-0 ms-2">Michael</h6>
+                            <img src="images/about/fenet.jpg" width="30px">
+                            <h6 class="m-0 ms-2">Fenet</h6>
                         </div>
                         <p>As a seasoned traveler, I can confidently say that Addis Hotel is a true gem. The
                             combination of luxurious accommodations, world-class facilities, and impeccable service
@@ -245,8 +244,8 @@
                     </div>
                     <div class="swiper-slide bg-white py-2 px-5">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/sara.jpg" width="30px">
-                            <h6 class="m-0 ms-2">Salah</h6>
+                            <img src="images/about/about.png" width="30px">
+                            <h6 class="m-0 ms-2">Rediet</h6>
                         </div>
                         <p>I had the pleasure of hosting a corporate event at Addis Hotel, and I must say, the
                             experience was flawless.</p>
@@ -260,8 +259,8 @@
                     </div>
                     <div class="swiper-slide bg-white py-2 px-5">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/eml.jpg" width="30px">
-                            <h6 class="m-0 ms-2">Emily</h6>
+                            <img src="images/about/gelil.jpg" width="30px">
+                            <h6 class="m-0 ms-2">Gelila</h6>
                         </div>
                         <p>As a frequent business traveler, I've stayed at many hotels, but Addis Hotel stands out
                             as the best. The level of service and attention to detail is truly remarkable.</p>
@@ -275,8 +274,8 @@
                     </div>
                     <div class="swiper-slide bg-white py-2 px-5">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/gex.jpg" width="30px">
-                            <h6 class="m-0 ms-2">Gexe</h6>
+                            <img src="images/about/tse.jpg" width="30px">
+                            <h6 class="m-0 ms-2">Tsehay</h6>
                         </div>
                         <p>"My family and I recently stayed at Addis Hotel for a week-long vacation, and it was an
                             absolute delight. The spacious rooms, impressive facilities, and delicious dining
