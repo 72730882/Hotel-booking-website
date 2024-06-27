@@ -20,8 +20,9 @@
     <div class="my-5 px-4">
         <h2 class="fw-bold h-font text-center">contact us</h2>
         <div class="h-line bg-dark"></div>
-        <p class="text-center mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Odit molestiae quod repudiandae <br> similique dolores ipsa repellendus ullam fuga iure velit.</p>
+        <p class="text-center mt-3">Welcome to addis stay hotel, your premier destination for luxury accommodation <br>and exceptional
+             service. Whether you're planning a romantic getaway,<br> a family vacation, or a business trip, we're here to ensure your
+              stay is comfortable and memorable.</p>
     </div>
 
     <div class="container">
