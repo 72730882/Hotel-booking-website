@@ -43,7 +43,6 @@ if ($stmt->execute()) {
         'email' => $email,
         'profile' => $targetFilePath
     ];
-
     echo "<script>alert('Registered successfully');</script>";
     header("Location: index.php");
     exit();

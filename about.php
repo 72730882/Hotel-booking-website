@@ -32,17 +32,16 @@
     <div class="my-5 px-4">
         <h2 class="fw-bold h-font text-center">ABOUT US</h2>
         <div class="h-line bg-dark"></div>
-        <p class="text-center mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Odit molestiae quod repudiandae <br> similique dolores ipsa repellendus ullam fuga iure velit.</p>
+        <p class="text-center mt-3">Dedicated to Excellence in Hospitality<br>
+At Addis Hotel, our success is driven by a team of experienced and passionate professionals<br> dedicated to delivering exceptional service and unforgettable experiences. Meet the people who make it all possible:</p>
     </div>
 
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
-                <h3 class="mb-3">Lorem ipsum dolor sit</h3>
+                <h3 class="mb-3">Rediet Muluken – General Manager</h3>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Possimus nobis praesentium incidunt aliquam placeat. Inventore, consequatur?
+                   With over 20 years of experience in the hospitality industry, Rediet Muluken leads our team with a vision for excellence and innovation. His commitment to creating a welcoming and luxurious environment for all guests is reflected in every aspect of our hotel operations. Rediet’s leadership has been instrumental in establishing Addis Hotel as a premier destination in Addis Ababa.
                 </p>
             </div>
             <div class="col lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">

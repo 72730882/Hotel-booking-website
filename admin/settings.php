@@ -498,48 +498,42 @@ require('inc/essentials.php');
         add_member();
     })
 
-    function add_member(){
-        let data = new FormData();
-        data.append('name',member_name_inp.value);
-        data.append('picture',member_picture_inp.files[0]);
-        data.append('add_membar','');
+    function add_member() {
+    let data = new FormData();
+    data.append('name', member_name_inp.value);
+    data.append('picture', member_picture_inp.files[0]);
+    data.append('add_member', '');
 
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "ajax/settings_crud.php", true);
-       
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "ajax/settings_crud.php", true);
 
-        xhr.onload = function() {
-            var myModal = document.getElementById('team-s');
-            var modal = bootstrap.Modal.getInstance(myModal);
-            modal.hide();
+    xhr.onload = function() {
+        var myModal = document.getElementById('team-s');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
 
-            if(this.responseText == 'inv_img'){
-                alert('error', 'Only JPG and PNG images are allowed');
-            }
-            else if(this.responseText == 'inv_size'){
-                alert('error', 'Images should be less that 2MB!');
-            }
-            else if(this.responseText == 'upd_failed'){
-                alert('error', 'Image upload faile. Server Down!');
-
-            }
-            else{
-                alert('Success','New member added!');
-                member_name_inp.value='';
-                member_picture_inp.value='';
-                get_members() // to display the image on the dashboard
-            }
+        if (this.responseText == 'inv_img') {
+            alert('error', 'Only JPG and PNG images are allowed');
+        } else if (this.responseText == 'inv_size') {
+            alert('error', 'Images should be less than 2MB!');
+        } else if (this.responseText == 'upd_failed') {
+            alert('error', 'Image upload failed. Server Down!');
+        } else {
+            alert('Success', 'New member added!');
+            member_name_inp.value = '';
+            member_picture_inp.value = '';
+            get_members(); // to display the new member on the dashboard
         }
-        
-        xhr.send(data);
-        }
-
-    
-        window.onload = function() {
-        get_general();
-        get_contacts();
-
     }
+
+    xhr.send(data);
+}
+
+window.onload = function() {
+    get_general();
+    get_contacts();
+}
+
 
     function get_members(){
         let xhr = new XMLHttpRequest();
