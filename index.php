@@ -376,17 +376,21 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
         <script>
-            var swiper = new Swiper(".swiper-container", {
-                spaceBetween: 30,
-                effect: "fade",
-                lickable: true,
-                loop: true,
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }
-            });
-        </script>
+    var swiper = new Swiper(".swiper-container", {
+        spaceBetween: 30,
+        effect: "fade",
+        lickable: true,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        }
+    });
+    var images = document.querySelectorAll('.swiper-container img');
+    images.forEach(function(image) {
+        image.style.borderRadius = '16px';
+    });
+</script>
         <script>
             var swiper = new Swiper(".swiper-testimonials", {
                 effect: "coverflow",
