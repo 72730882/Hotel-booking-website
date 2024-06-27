@@ -65,3 +65,10 @@ We would like to thank everyone who contributed to the development of EasyStay a
 
 ## Contact
 If you have any questions or concerns regarding the project, feel free to reach out to any of the group members listed above.
+
+![Screenshot 2024-06-27 112924](https://github.com/![Screenshot 2024-06-27 113011](https://github.com/72730882/Hotel-booking-website/assets/146714199/f985a331-6c90-4ce1-96ca-3f0460f50152)
+72730882/Hotel-booking-website/assets/146714199/e8c2de12-59da-4776-a427-a59ed7645512)
+![Screenshot 2024-06-27 113001](https://github.com/72730882/Hotel-booking-website/assets/146714199/fed487ef-dcdc-4c60-95ad-98d59ab35035)
+
+![Screenshot 2024-06-27 113029](https://github.com/72730882/Hotel-booking-website/assets/146714199/4c6a65d2-1e40-4ca0-abf2-c366b40cc353)
+![Screenshot 2024-06-27 113045](https://github.com/72730882/Hotel-booking-website/assets/146714199/5ac9bdaa-32e8-4043-b041-9f24269348b5)
