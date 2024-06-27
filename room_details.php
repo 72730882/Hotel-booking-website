@@ -88,7 +88,7 @@
         <div class="card mb-4 border-0 shadow-sm rounded-3">
           <div class="card-body">
             <?php
-
+            // proc_nice()
             echo <<<price
                <h4>$room_data[price]USD per night</h4>
               price;
