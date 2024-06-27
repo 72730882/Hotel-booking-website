@@ -26,8 +26,10 @@
     <div class="my-5 px-4">
         <h2 class="fw-bold h-font text-center">Our Facilities</h2>
         <div class="h-line bg-dark"></div>
-        <p class="text-center mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Odit molestiae quod repudiandae <br> similique dolores ipsa repellendus ullam fuga iure velit.</p>
+        <p class="text-center mt-3">Welcome to Addis stay hotel, where luxury meets comfort. 
+            We pride ourselves<br> on providing an exceptional guest experience through our
+             wide range of<br> facilities and services. Whether you're here for business or
+              leisure, we ensure your stay<br> is memorable and convenient.</p>
     </div>
 
     <div class="container">
@@ -51,78 +53,11 @@
                 }
             ?>
 
-            <div class="col-lg-4 md-6 mb-5 px-4">
-                <div class="bg-white ronded shadow p-4 border-top border-4 border-dark pop">
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class="m-0 ms-3">Wifi</h5>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Laborum animi nemo similique, voluptatibus minima hic nam.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 md-6 mb-5 px-4">
-                <div class="bg-white ronded shadow p-4 border-top border-4 border-dark pop">
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="images/features/FT.jpg" width="40px">
-                        <h5 class="m-0 ms-3">Television</h5>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Laborum animi nemo similique, voluptatibus minima hic nam.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 md-6 mb-5 px-4">
-                <div class="bg-white ronded shadow p-4 border-top border-4 border-dark pop">
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="images/features/FA.jpg" width="40px">
-                        <h5 class="m-0 ms-3">Air Conditioner</h5>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Laborum animi nemo similique, voluptatibus minima hic nam.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 md-6 mb-5 px-4">
-                <div class="bg-white ronded shadow p-4 border-top border-4 border-dark pop">
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="images/features/FH.jpg" width="40px">
-                        <h5 class="m-0 ms-3">Room Heater</h5>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Laborum animi nemo similique, voluptatibus minima hic nam.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 md-6 mb-5 px-4">
-                <div class="bg-white ronded shadow p-4 border-top border-4 border-dark pop">
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="images/features/Ff.jpg" width="40px">
-                        <h5 class="m-0 ms-3">Fitness Center</h5>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Laborum animi nemo similique, voluptatibus minima hic nam.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 md-6 mb-5 px-4">
-                <div class="bg-white ronded shadow p-4 border-top border-4 border-dark pop">
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="images/features/FT.jpg" width="40px">
-                        <h5 class="m-0 ms-3">DS TV for Football</h5>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Laborum animi nemo similique, voluptatibus minima hic nam.
-                    </p>
-                </div>
-            </div>
+         
+           
+          
+            
+          
         </div>
     </div>
 

@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="assets/common.css">
   <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css " rel="stylesheet">
 
-  <?php require('inc/links.php'); ?>
+  <?php require ('inc/links.php'); ?>
 
 </head>
 
 <body class="bg-light">
-  <?php require('inc/header.php') ?>
+  <?php require ('inc/header.php') ?>
 
   <div class="my-5 px-4">
     <h2 class="fw-bold h-font text-center">OUR ROOMS</h2>
@@ -27,7 +27,9 @@
         <nav class="navbar navbar-expand-lg bg-light bg-white rounded shadow">
           <div class="container-fluid flex-lg-column align-items-stretch">
             <h4 class="mt-2">FILTERS</h4>
-            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#filterDropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#filterDropdown" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse flex-column width=30px align-items-stretch mt-2" id="filterDropdown">
@@ -79,7 +81,7 @@
           </div>
         </nav>
       </div>
-
+   
       <div class="col-lg-9  col-md-12 ">
         <?php
 
@@ -88,7 +90,7 @@
         $removed = 0;
 
         $room_res = select(
-          "SELECT * FROM `rooms` WHERE `status`=? AND `removed`=? ORDER BY `id` DESC LIMIT 3",
+          "SELECT * FROM `rooms` WHERE `status`=? AND `removed`=? ORDER BY `id` DESC LIMIT 10",
           [$status, $removed],
           'ii'
         );
@@ -101,7 +103,7 @@
         }
 
         if (mysqli_num_rows($room_res) > 0) {
-
+          
 
           while ($room_data = mysqli_fetch_assoc($room_res)) {
             // Get features of room
@@ -166,7 +168,7 @@
                   </div>
                   <div class="col-md-2 text-center">
                     <h6 class="mb-4">$room_data[price] USD per night</h6>
-                    <a href="booking.php?id=$room_data[id]" class="btn btn-primary text-white w-100 shadow-none mb-2">Book Now</a>
+                    <a href="booking.php?id=$room_data[id]"  class="btn btn-primary text-white w-100 shadow-none mb-2">Book Now</a>
                     <a href="room_details.php?id=$room_data[id]" class="btn btn-sa btn-outline-dark w-100 rounded-0 fw-bold shadow-none">More details</a>
                   </div>
                 </div>
@@ -175,19 +177,19 @@
         data;
           }
           // Close the row and container after the loop
-
-
+        
+          
         } else {
           // No rooms found
           echo "<div class='col-12'><p>No rooms found.</p></div>";
         }
         ?>
-      </div>
     </div>
   </div>
+</div>
 
 
-  <?php require('inc/footer.php') ?>
+  <?php require ('inc/footer.php') ?>
   <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js "></script>
 
 

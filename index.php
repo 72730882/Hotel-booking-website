@@ -1,5 +1,4 @@
-<!DOCTYPE html
-<html>
+<!DOCTYPE html <html>
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Addis Hotel - Home</title>
     <link rel="stylesheet" href="assets/common.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Poppins:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -21,13 +18,13 @@
 
 <body class="bg-light">
 
-    <?php require ('inc/header.php') ?>
+    <?php require('inc/header.php') ?>
 
     <!------ carousel ------>
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container">
             <div class="swiper-wrapper">
-                
+
                 <div class="swiper-slide">
                     <img src="images/carousel/hot.jpg" class="d-block img-fluid" alt="Carousel Image">
                 </div>
@@ -44,11 +41,11 @@
                     <img src="images/carousel/im3.jpg" class="d-block img-fluid" alt="Carousel Image">
                 </div>
             </div>
-    
+
             <div class="swiper-pagination"></div>
         </div>
     </div>
-  
+
     <div class="container availability-form">
         <div class="row">
             <div class="col-lg-12 bg-white shadow m-10 P-4 rounded">
@@ -80,8 +77,7 @@
                             </select>
                         </div>
                         <div class="col-lg-1 mb-lg-3 mt-2">
-                            <button type="submit"
-                                class="btn btn-white text-black shadow-none boarder-black customer-bg">Submit</button>
+                            <button type="submit" class="btn btn-white text-black shadow-none boarder-black customer-bg">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -102,7 +98,7 @@
             while ($room_data = mysqli_fetch_assoc($room_res)) {
 
                 //get features of room
-            
+
                 $fea_q = mysqli_query($con, "SELECT * FROM `features` f
                 INNER JOIN `room_features` rfea ON f.id =rfea.features_id
                 WHERE rfea.room_id='$room_data[id]'");
@@ -113,7 +109,7 @@
                 }
 
                 //get facilities of room
-            
+
                 $fac_q = mysqli_query($con, "SELECT * FROM `facilities` f
                 INNER JOIN `room_facilities` rfac ON f.id = rfac.facilities_id
                 WHERE rfac.room_id='$room_data[id]'");
@@ -124,7 +120,7 @@
                 }
 
                 // get thumbnail of images
-            
+
                 $room_thumb = ROOMS_IMG_PATH . "thumbnail.jpg";
                 $thumb_q = mysqli_query($con, "SELECT * FROM `room_images` 
                 WHERE `room_id`= '$room_data[id]'
@@ -132,11 +128,11 @@
 
                 if (mysqli_num_rows($thumb_q) > 0) {
                     $thumb_res = mysqli_fetch_assoc($thumb_q);
-                    $room_thumb = ROOMS_IMG_PATH . $thumb['image'];
+                    $room_thumb = ROOMS_IMG_PATH . $thumb_res['image'];
                 }
 
                 //print room card
-            
+
                 echo <<<data
                     <div class="col-lg-4 col-md-6 my-3 ">
                         <div class="card border-0 shadow" style="max-width: 300px; margin: auto;">
@@ -218,8 +214,8 @@
                 <div class="swiper-wrapper  bg-white ">
                     <div class="swiper-slide bg-white p-4  ">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/david.jpg" width="30px">
-                            <h6 class="m-0 ms-2">David</h6>
+                            <img src="images/about/fayo.png" width="30px">
+                            <h6 class="m-0 ms-2">Faiza</h6>
                         </div>
                         <p> Addis Hotel is now my go-to choice whenever I visit the city."</p>
                         <div class="rating">
@@ -232,8 +228,8 @@
                     </div>
                     <div class="swiper-slide bg-white py-2 px-5">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/mich.jpg" width="30px">
-                            <h6 class="m-0 ms-2">Michael</h6>
+                            <img src="images/about/fenet.jpg" width="30px">
+                            <h6 class="m-0 ms-2">Fenet</h6>
                         </div>
                         <p>As a seasoned traveler, I can confidently say that Addis Hotel is a true gem. The
                             combination of luxurious accommodations, world-class facilities, and impeccable service
@@ -248,8 +244,8 @@
                     </div>
                     <div class="swiper-slide bg-white py-2 px-5">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/sara.jpg" width="30px">
-                            <h6 class="m-0 ms-2">Salah</h6>
+                            <img src="images/about/about.png" width="30px">
+                            <h6 class="m-0 ms-2">Rediet</h6>
                         </div>
                         <p>I had the pleasure of hosting a corporate event at Addis Hotel, and I must say, the
                             experience was flawless.</p>
@@ -263,8 +259,8 @@
                     </div>
                     <div class="swiper-slide bg-white py-2 px-5">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/eml.jpg" width="30px">
-                            <h6 class="m-0 ms-2">Emily</h6>
+                            <img src="images/about/gelil.jpg" width="30px">
+                            <h6 class="m-0 ms-2">Gelila</h6>
                         </div>
                         <p>As a frequent business traveler, I've stayed at many hotels, but Addis Hotel stands out
                             as the best. The level of service and attention to detail is truly remarkable.</p>
@@ -278,8 +274,8 @@
                     </div>
                     <div class="swiper-slide bg-white py-2 px-5">
                         <div class="profile d-flex  align-items-center m-4">
-                            <img src="images/testimonial/gex.jpg" width="30px">
-                            <h6 class="m-0 ms-2">Gexe</h6>
+                            <img src="images/about/tse.jpg" width="30px">
+                            <h6 class="m-0 ms-2">Tsehay</h6>
                         </div>
                         <p>"My family and I recently stayed at Addis Hotel for a week-long vacation, and it was an
                             absolute delight. The spacious rooms, impressive facilities, and delicious dining
@@ -312,14 +308,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
-                    <iframe class="w-100 rounded" height="320px" src="<?php echo $contact_r['iframe'] ?>" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe class="w-100 rounded" height="320px" src="<?php echo $contact_r['iframe'] ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="bg-white p-4 rounded mb-4">
                         <h5>Call Us</h5>
-                        <a href="tel: +<?php echo $contact_r['pn1'] ?>"
-                            class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <a href="tel: +<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
                             <i class="bi bi-telephone-fill"></i>+<?php echo $contact_r['pn1'] ?>
                         </a>
                         <br>
@@ -364,14 +358,12 @@
             </div>
         </div>
 
-        <?php require ('inc/footer.php') ?>
+        <?php require('inc/footer.php') ?>
 
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-            </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            </script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        </script>
         <script src="assets/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -472,12 +464,10 @@
                 }
             });
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-            </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            </script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        </script>
         <script src="assets/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js "></script>
