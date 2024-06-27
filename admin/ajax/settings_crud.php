@@ -67,6 +67,7 @@ if (isset($_POST['add_member'])) {
     }
 }
 
+
 if (isset($_POST['get_members'])) {
     $res = selectAll('team_details');
 

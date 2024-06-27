@@ -1,25 +1,22 @@
 <?php
-// booking_success.php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $checkin = $_POST['checkin'];
+    $checkout = $_POST['checkout'];
+    $adults = $_POST['adults'];
+    $children = $_POST['children'];
+    $total_price = $_POST['total_price'];
+    $room_id = $_POST['room_id'];
 
-// Mock booking details (replace with actual booking details)
-$bookingDetails = [
-    'name' => 'John Doe',
-    'email' => 'john.doe@example.com',
-    'phone' => '+1234567890',
-    'checkin' => '2024-07-01',
-    'checkout' => '2024-07-05',
-    'adults' => 2,
-    'children' => 1,
-    'total_price' => 400.00, // in USD
-];
+    // Generate a unique payment code
+    $paymentCode = strtoupper(substr(md5(time()), 0, 10));
 
-// Generate a unique payment code
-$paymentCode = strtoupper(substr(md5(time()), 0, 10));
-
-// Include header and links
-include('inc/header.php');
-include('inc/links.php');
-?>
+    // Include header and links
+    include('inc/header.php');
+    include('inc/links.php');
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,19 +38,19 @@ include('inc/links.php');
                     <div class="col-md-6 mb-3">
                         <h5>Booking Details</h5>
                         <ul class="list-group">
-                            <li class="list-group-item">Name: <?php echo $bookingDetails['name']; ?></li>
-                            <li class="list-group-item">Email: <?php echo $bookingDetails['email']; ?></li>
-                            <li class="list-group-item">Phone: <?php echo $bookingDetails['phone']; ?></li>
-                            <li class="list-group-item">Check-in Date: <?php echo $bookingDetails['checkin']; ?></li>
-                            <li class="list-group-item">Check-out Date: <?php echo $bookingDetails['checkout']; ?></li>
-                            <li class="list-group-item">Adults: <?php echo $bookingDetails['adults']; ?></li>
-                            <li class="list-group-item">Children: <?php echo $bookingDetails['children']; ?></li>
-                            <li class="list-group-item">Total Price: $<?php echo number_format($bookingDetails['total_price'], 2); ?> USD</li>
+                            <li class="list-group-item">Name: <?php echo htmlspecialchars($name); ?></li>
+                            <li class="list-group-item">Email: <?php echo htmlspecialchars($email); ?></li>
+                            <li class="list-group-item">Phone: <?php echo htmlspecialchars($phone); ?></li>
+                            <li class="list-group-item">Check-in Date: <?php echo htmlspecialchars($checkin); ?></li>
+                            <li class="list-group-item">Check-out Date: <?php echo htmlspecialchars($checkout); ?></li>
+                            <li class="list-group-item">Adults: <?php echo htmlspecialchars($adults); ?></li>
+                            <li class="list-group-item">Children: <?php echo htmlspecialchars($children); ?></li>
+                            <li class="list-group-item">Total Price: <?php echo htmlspecialchars($total_price); ?> USD</li>
                         </ul>
                     </div>
                     <div class="col-md-6 mb-3">
                         <h5>Payment Details</h5>
-                        <p>Your payment code is: <strong><?php echo $paymentCode; ?></strong></p>
+                        <p>Your payment code is: <strong><?php echo htmlspecialchars($paymentCode); ?></strong></p>
                         <p>Please use the following methods to complete your payment:</p>
                         <ul class="list-group">
                             <li class="list-group-item">Credit/Debit Card</li>
@@ -78,3 +75,9 @@ include('inc/links.php');
 </body>
 
 </html>
+<?php
+} else {
+    header("Location: index.php");
+    exit();
+}
+?>
