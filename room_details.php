@@ -131,7 +131,8 @@
               $facilities_data .= "<span class='badge rounded-pill bg-light text-dark  text-wrap me-1 mb-1'>
                $fea_row[name]</span>";
             }
-
+            // $facilities_data
+            
             echo <<<facilities
             <div class="mb-3">
               <h6 class="mb-1 mt-3">facilities</h6>
