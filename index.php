@@ -47,7 +47,7 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-
+    <!-- availability -->
     <div class="container availability-form">
         <div class="row">
             <div class="col-lg-12 bg-white shadow m-10 P-4 rounded">
@@ -159,6 +159,7 @@
 
 
                                 </div>
+                                
                                 <div class="rating mb-3">
                                     <h6 class="mb-1">Rating</h6>
                                     <span class="badge rounded-pill bg-light">
@@ -177,7 +178,7 @@
                             </div>
                     </div>
                 </div>
-
+            
                 data;
             }
             ?>
