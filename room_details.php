@@ -34,7 +34,7 @@
 
   $room_data = mysqli_fetch_assoc($room_res);
   ?>
-
+  <!-- room data -->
   <div class="container">
     <div class="row">
       <div class="col-12 my-5 px-4">
@@ -74,14 +74,14 @@
 
             ?>
           </div>
-           <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
-             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-             <span class="visually-hidden">Previous</span>
-             </button>
-           <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
-             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-             <span class="visually-hidden">Next</span>
-             </button>
+          <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
       <div class="col-lg-5 col-md-12 px-4">
@@ -182,7 +182,7 @@
           <p>As a seasoned traveler, I can confidently say that Addis Hotel is a true gem. The
             combination of luxurious accommodations, world-class facilities, and impeccable service
             is unparalleled. </p>
-            <i class="rating">
+          <i class="rating">
             <i class="bi bi-star-fill text-warning"></i>
             <i class="bi bi-star-fill text-warning"></i>
             <i class="bi bi-star-fill text-warning"></i>
