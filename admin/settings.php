@@ -37,7 +37,7 @@ require('inc/essentials.php');
 <body class="bg-light">
 
     <div class="container-fluid bg-dark text-light p-3 d-flex align-items-center justify-content-between sticky-top">
-        <h3 class="mb-0 h-font">HOTEL BOOKING WEBSITE</h3>
+        <h3 class="mb-0 h-font">ADDIS HOTEL BOOKING WEBSITE</h3>
         <a href="logout.php" class="btn btn-light btn-sm">LOG OUT</a>
     </div>
 
@@ -182,7 +182,7 @@ require('inc/essentials.php');
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <h6 class="card-subtitle mb-1 fw-bold">Address</h6>
-                                    <p class="card-text" id="address"></p>
+                                    <p class="card-text" id="address"> megenaga,Addis Ababa,Ethiopia</p>
                                 </div>
                                 <div class="mb-4">
                                     <h6 class="card-subtitle mb-1 fw-bold">Google Map</h6>
@@ -190,13 +190,13 @@ require('inc/essentials.php');
                                 </div>
                                 <div class="mb-4">
                                     <h6 class="card-subtitle mb-1 fw-bold">Phone Numbers</h6>
-                                    <p class="card-text mb-1"><i class="bi bi-telephone-fill"></i><span id="pn1"></span>
+                                    <p class="card-text mb-1"><i class="bi bi-telephone-fill">++111 2222 333 3444</i><span id="pn1"></span>
                                     </p>
-                                    <p class="card-text"><i class="bi bi-telephone-fill"></i><span id="pn2"></span></p>
+                                    <p class="card-text"><i class="bi bi-telephone-fill">++111 2222 333 3444</i><span id="pn2"></span></p>
                                 </div>
                                 <div class="mb-4">
                                     <h6 class="card-subtitle mb-1 fw-bold">E-mail</h6>
-                                    <p class="card-text" id="email"></p>
+                                    <p class="card-text" id="email"> addisstay@gmail.com</p>
                                 </div>
 
                             </div>
@@ -209,7 +209,7 @@ require('inc/essentials.php');
                                     <p class="card-text"><i class="bi bi-instagram"></i><span id="insta"></span></p>
                                 </div>
                                 <div class="mb-4">
-                                    <iframe id="iframe" class="border p-2 w-100" loading="lazy"></iframe>
+                                    <iframe id="iframe" class="border p-2 w-100" loading="lazy">https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d252230.23036287102!2d38.778145!3d8.963177!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1716723032939!5m2!1sen!2sus</iframe>
                                 </div>
                             </div>
 

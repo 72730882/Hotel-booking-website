@@ -89,22 +89,23 @@ At Addis Hotel, our success is driven by a team of experienced and passionate pr
     <div class="swiper mySwiper">
         <div class="swiper-wrapper mb-5">
             <div class="swiper-slide text-center overflow-hidden rounded">
-                <img src="images\about\fenet.jpg" class="w-100">
-                <h5 class="mt-2">Fenet Demena</h5>
+                <img src="images/about/fenet.jpg" class="w-10">
+                <h1 class="mt-2" style="color: red;">Fenet Demena</h5>
             </div>
             <div class="swiper-slide text-center overflow-hidden rounded">
-                <img src="images\about\fayo.png" class="w-100">
-                <h5 class="mt-2">Faiza Mohammed</h5>
+                <img src="images/about/fayo.png" class="w-10">
+                <h5 class="mt-2" style="color: red;">Faiza Mohammed</h5>
             </div>
             <div class="swiper-slide text-center overflow-hidden rounded">
-                <img src="images\about\gelila.jpg" class="w-100">
-                <h5 class="mt-2">Gelila Mihreke</h5>
+                <img src="images/about/gelila.jpg" class="w-10">
+                <h5 class="mt-2" style="color: red;">Gelila Mihreke</h5>
             </div>
             <div class="swiper-slide text-center overflow-hidden rounded">
-                <img src="images\about\fenet.jpg" class="w-100">
-                <h5 class="mt-2">Tsehay Gormes</h5>
+                <img src="images/about/fenet.jpg" class="w-10">
+                <h5 class="mt-2" style="color: red;">Tsehay Gormes</h5>
             </div>
         </div>
+
         <div class="swiper-pagination"></div>
     </div>
 </div>
