@@ -182,7 +182,7 @@
             <img src="images/about/tse.jpg" width="30px">
             <h6 class="m-0 ms-2">Tsehay Goremes</h6>
           </div>
-          <p>As a seasoned traveler, I can confidently say that Addis Hotel is a true gem. The
+          <p>As a seasoned traveler, I can confidently say that Addis Hotel Booking is a true gem. The
             combination of luxurious accommodations, world-class facilities, and impeccable service
             is unparalleled. </p>
           <i class="rating">
