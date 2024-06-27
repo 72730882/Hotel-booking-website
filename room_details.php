@@ -148,7 +148,7 @@
              </div>
 
             guests;
-
+            // $fac_q = mysqli_query($con, "");
             echo <<<area
              <div class="mb-1">
              <h6 class="mb-1 mt-3">Area</h6>
@@ -177,8 +177,8 @@
         <h5 class="mb-5">Review and Rating</h5>
         <div>
           <div class="d-flex  align-items-center m-2">
-            <img src="images/testimonial/mich.jpg" width="30px">
-            <h6 class="m-0 ms-2">Michael</h6>
+            <img src="images/about/tse.jpg" width="30px">
+            <h6 class="m-0 ms-2">Tsehay Goremes</h6>
           </div>
           <p>As a seasoned traveler, I can confidently say that Addis Hotel is a true gem. The
             combination of luxurious accommodations, world-class facilities, and impeccable service
