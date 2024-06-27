@@ -66,9 +66,11 @@ We would like to thank everyone who contributed to the development of EasyStay a
 ## Contact
 If you have any questions or concerns regarding the project, feel free to reach out to any of the group members listed above.
 
-![Screenshot 2024-06-27 112924](https://github.com/![Screenshot 2024-06-27 113011](https://github.com/72730882/Hotel-booking-website/assets/146714199/f985a331-6c90-4ce1-96ca-3f0460f50152)
-72730882/Hotel-booking-website/assets/146714199/e8c2de12-59da-4776-a427-a59ed7645512)
-![Screenshot 2024-06-27 113001](https://github.com/72730882/Hotel-booking-website/assets/146714199/fed487ef-dcdc-4c60-95ad-98d59ab35035)
+![test](https://github.com/72730882/Hotel-booking-website/assets/143137390/d31133c9-4d06-4d08-a028-2ccf01126d34)
 
-![Screenshot 2024-06-27 113029](https://github.com/72730882/Hotel-booking-website/assets/146714199/4c6a65d2-1e40-4ca0-abf2-c366b40cc353)
-![Screenshot 2024-06-27 113045](https://github.com/72730882/Hotel-booking-website/assets/146714199/5ac9bdaa-32e8-4043-b041-9f24269348b5)
+![home](https://github.com/72730882/Hotel-booking-website/assets/143137390/16bb6a4f-b1c8-4926-a155-bb33cb466f2f)
+![room](https://github.com/72730882/Hotel-booking-website/assets/143137390/7208173b-7b78-4dd9-8e58-db075b0426aa)
+![map](https://github.com/72730882/Hotel-booking-website/assets/143137390/7a765c85-bc5c-48c6-a731-94a0ffd58b33)
+
+![b](https://github.com/72730882/Hotel-booking-website/assets/143137390/1e9d0b8d-626f-4f31-b031-d67319953a3a)
+![db adis hotel](https://github.com/72730882/Hotel-booking-website/assets/143137390/975765cb-ac2f-455e-980d-e3757f139f72)
