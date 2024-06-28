@@ -58,7 +58,7 @@ $contact_r = mysqli_fetch_assoc(select($contact_q, $value, 'i'));
                 <?php if ($isLoggedIn): ?>
                     <div id="profilePic" class="position-relative">
                         <img src="<?php echo $userProfile; ?>" alt="Profile Picture" class="rounded-circle"
-                            style="width: 40px; height: 40px; cursor: pointer;">
+                            style="width: 60px; height: 60px; cursor: pointer;">
                     </div>
                 <?php else: ?>
                     <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal"

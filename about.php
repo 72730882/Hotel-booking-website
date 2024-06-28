@@ -97,11 +97,11 @@ At Addis Hotel, our success is driven by a team of experienced and passionate pr
                 <h5 class="mt-2" style="color: red;">Faiza Mohammed</h5>
             </div>
             <div class="swiper-slide text-center overflow-hidden rounded">
-                <img src="images/about/gelil.jpg" class="w-100">
+                <img src="images/about/gelil.jpg" class="w-10">
                 <h5 class="mt-2">Gelila Mihreke</h5>
             </div>
             <div class="swiper-slide text-center overflow-hidden rounded">
-                <img src="images/about/tse.jpg" class="w-100">
+                <img src="images/about/tse.jpg" class="w-10">
                 <h5 class="mt-2">Tsehay Gormes</h5>
             </div>
         </div>
